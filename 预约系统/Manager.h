@@ -27,12 +27,12 @@ public:
     Manager(std::string name, std::string passward);//构造
 
     virtual void operMenu();//重写菜单
-    virtual void ReSetName(Identity& person, const std::string name);
-    virtual void ReSetPasswards(Identity& person, const std::string passward, const std::string oldpassward);
+    virtual void ReSetName(Identity& person, const std::string name);//重写修改名字
+    virtual void ReSetPasswards(Identity& person, const std::string passward, const std::string oldpassward);//重写修改密码
 
     friend std::istream& operator>>(std::istream& is, Manager& s);//重载>>管理员，用于读写数据
 
-    bool TextIdCmp(int fid, std::string text);
+    bool TextIdCmp(int fid, std::string text); // 比较ID和文本是否相等
 
     void SetId(const int& id);//设置ID
     void SetName(const std::string& name);//设置名字

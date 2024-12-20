@@ -14,9 +14,9 @@ std::istream& operator>>(std::istream& is, Manager& s) {
     return is;
 }
 
-bool TextIdCmp(int fid, std::string text) {
+bool Manager::TextIdCmp(int fid, std::string text) {
     std::string ftext = std::to_string(fid);
-    int len_valid_id = ftext.size();
+    size_t len_valid_id = ftext.size();
     for (int i = 0; i < text.size(); i++) {
         if (ftext[i] != text[i] || len_valid_id != text.size()) {
             return false;

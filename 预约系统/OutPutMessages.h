@@ -11,6 +11,7 @@ void printExitMainMenu();
 void printManagerSecondMenu();
 void printManagerThirst1Menu();
 void printManagerThirst2Menu();
+void printManagerThirst3Menu();
 ///教师菜单显示
 void printTeacherSecondMenu();
 void printTeacherThirst1Menu();

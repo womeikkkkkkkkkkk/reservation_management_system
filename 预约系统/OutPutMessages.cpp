@@ -56,7 +56,13 @@ void printManagerThirst1Menu() {
 }
 
 void printManagerThirst2Menu() {
-    cout << "请选择查看内容：" << endl;
+    cout << "请输入删除账号的类型" << endl;
+    cout << "1、添加学生" << endl;
+    cout << "2、添加老师" << endl;
+}
+
+void printManagerThirst3Menu() {
+    cout << "请选择查看账号的类型：" << endl;
     cout << "1、查看所有学生" << endl;
     cout << "2、查看所有老师" << endl;
 }
