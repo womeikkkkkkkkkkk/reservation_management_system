@@ -167,6 +167,7 @@ bool Manager::CheckRepeat(const int id, const int type) {
 
 void Manager::AddPerson()
 {
+    InitVector();
     ExceptionLog exceptionLog(EXCEPTIONLOG);
     std::string logMsg;
     try {
@@ -234,11 +235,12 @@ void Manager::AddPerson()
     }
 }
 
-void Manager::RemovePerson(const std::string& name) {
+void Manager::RemovePerson() {
     InitVector();
     ExceptionLog exceptionLog(EXCEPTIONLOG);
     std::string logMsg;
     try {
+        printManagerThirst2Menu();
     }
     catch (...) {
         logMsg = Utils::GetCurrentTime(UNKNOWN_EXCEPTION_OCCURRED);
@@ -248,28 +250,39 @@ void Manager::RemovePerson(const std::string& name) {
     }
 }
 
-void Manager::FindPerson(int select, const std::string& text) {
+void Manager::FindPerson(const std::string& text) {
     InitVector();
     ExceptionLog exceptionLog(EXCEPTIONLOG);
     std::string logMsg;
     try {
-        if (select == 1) {
-            for (auto i = vStu.begin(); i < vStu.end(); i++) {
-                if ((*i).GetName() == text || TextIdCmp((*i).GetId(), text)) {
-                    logMsg = Utils::GetCurrentTime(STUDENT_EXIST);
-                    exceptionLog.LogException(logMsg);
-                    std::cout << STUDENT_ID << (*i).GetId() << NAME << (*i).GetName() << PASSWARD << (*i).GetPassward() << std::endl;
-                    return;
+        int select = 0;
+        while (1) {
+            printManagerThirst3Menu();
+            std::cin >> select;
+            if (select == 1) {
+                for (auto i = vStu.begin(); i < vStu.end(); i++) {
+                    if ((*i).GetName() == text || TextIdCmp((*i).GetId(), text)) {
+                        logMsg = Utils::GetCurrentTime(STUDENT_EXIST);
+                        exceptionLog.LogException(logMsg);
+                        std::cout << STUDENT_ID << (*i).GetId() << NAME << (*i).GetName() << PASSWARD << (*i).GetPassward() << std::endl;
+                        return;
+                    }
                 }
             }
-        }
-        else if (select == 2) {
-            for (auto i = vTea.begin(); i < vTea.end(); i++) {
-                if ((*i).GetName() == text || TextIdCmp((*i).GetId(), text)) {
-                    logMsg = Utils::GetCurrentTime(TEACHER_EXIST);
-                    exceptionLog.LogException(logMsg);
-                    std::cout << TEACHER_ID << (*i).GetId() << NAME << (*i).GetName() << PASSWARD << (*i).GetPassward() << std::endl;
+            else if (select == 2) {
+                for (auto i = vTea.begin(); i < vTea.end(); i++) {
+                    if ((*i).GetName() == text || TextIdCmp((*i).GetId(), text)) {
+                        logMsg = Utils::GetCurrentTime(TEACHER_EXIST);
+                        exceptionLog.LogException(logMsg);
+                        std::cout << TEACHER_ID << (*i).GetId() << NAME << (*i).GetName() << PASSWARD << (*i).GetPassward() << std::endl;
+                        return;
+                    }
                 }
+            }
+            else {
+                printInputError();
+                logMsg = Utils::GetCurrentTime(CIN_ERROR);
+                exceptionLog.LogException(logMsg);
             }
         }
     }
@@ -289,7 +302,7 @@ void Manager::ShowPerson()
     try {
         int select = 0;
         while (1) {
-            printManagerThirst2Menu();
+            printManagerThirst3Menu();
             std::cin >> select;
             if (select == 1) {
                 printAllStudentInfo();

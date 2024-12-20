@@ -78,6 +78,8 @@ const std::string STUDENT_EXIST = "查找学生成功";
 const std::string TEACHER_NO_EXIST = "该教师不存在，请确认后查找";
 const std::string TEACHER_EXIST = "查找教师成功";
 const std::string FIND_FALIED = "查找失败";
+
+const std::string CIN_ERROR = "输入错误";
 enum {
     // 0学生  1教师  2 管理员
     STUDENTID,

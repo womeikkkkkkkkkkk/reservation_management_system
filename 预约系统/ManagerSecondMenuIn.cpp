@@ -12,10 +12,18 @@ void ManagerSecondMenu(Identity* manager) {
             man->AddPerson();
         }
         else if (select == 2) {
+            printRemovePerson();
+            man->RemovePerson();
+        }
+        else if (select == 3) {
+            printFindPerson();
+            man->FindPerson(manager->GetName());
+        }
+        else if (select == 4) {
             printViewAccount();
             man->ShowPerson();
         }
-        else if (select == 3) {
+        else if (select == 4) {
             printViewComputerRoom();
             man->ShowComputer();
         }
@@ -26,7 +34,7 @@ void ManagerSecondMenu(Identity* manager) {
         else if (select == 5) {
             printResetName();
             std::string s;  std::cin >> s;
-            man->ReSetName(*man,s);
+            man->ReSetName(*man, s);
         }
         else if (select == 6) {
             printResetPassward();

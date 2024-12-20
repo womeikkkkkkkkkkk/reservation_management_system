@@ -46,8 +46,8 @@ public:
     bool CheckRepeat(const int id, const int type);//去重
 
     void AddPerson();//添加用户
-    void RemovePerson(const std::string& name);//删除用户（待实现）
-    void FindPerson(int select, const std::string& name);//查找用户(待实现)
+    void RemovePerson();//删除用户（待实现）
+    void FindPerson(const std::string& text);//查找用户
     void ShowPerson();//显示所有用户
     void ShowComputer();//显示机房信息
     void CleanFile();//清空数据

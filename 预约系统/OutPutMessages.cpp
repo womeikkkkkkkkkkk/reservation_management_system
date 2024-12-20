@@ -33,15 +33,13 @@ void printManagerSecondMenu() {
     cout << "\t\t|                                |\n";
     cout << "\t\t|          3.查找账号            |\n";
     cout << "\t\t|                                |\n";
-    cout << "\t\t|          4.查看账号            |\n";
+    cout << "\t\t|          4.查看机房            |\n";
     cout << "\t\t|                                |\n";
-    cout << "\t\t|          5.查看机房            |\n";
+    cout << "\t\t|          5.清空预约            |\n";
     cout << "\t\t|                                |\n";
-    cout << "\t\t|          6.清空预约            |\n";
+    cout << "\t\t|          6.修改用户名          |\n";
     cout << "\t\t|                                |\n";
-    cout << "\t\t|          7.修改用户名          |\n";
-    cout << "\t\t|                                |\n";
-    cout << "\t\t|          8.修改密码            |\n";
+    cout << "\t\t|          7.修改密码            |\n";
     cout << "\t\t|                                |\n";
     cout << "\t\t|          0.注销登录            |\n";
     cout << "\t\t|                                |\n";
@@ -215,6 +213,14 @@ void printCurrentTeacherNumber(int teachernums) {
 
 void printAddSuccess() {
     cout << "添加成功" << endl;
+}
+
+void printRemovePerson() {
+    cout << "删除账号" << endl;
+}
+
+void printFindPerson() {
+    cout << "查找账号" << endl;
 }
 
 void printViewAccount() {

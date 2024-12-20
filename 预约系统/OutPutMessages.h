@@ -53,6 +53,8 @@ void printAddAccount();
 void printStudentIdDuplicate();
 void printTeacherIdDuplicate();
 void printAddSuccess();
+void printRemovePerson();
+void printFindPerson();
 void printInputName();
 void printViewAccount();
 void printAllTeacherInfo();
