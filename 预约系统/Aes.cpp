@@ -163,3 +163,7 @@ std::string Aes::UnpadData(const std::string& paddedData, size_t blockSize) {
         return "";
     }
 }
+
+void test() {
+    std::cout << "test" << std::endl;
+}
