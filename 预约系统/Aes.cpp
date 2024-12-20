@@ -1,8 +1,5 @@
 #pragma once
 #include "Aes.h"
-void test() {
-    std::cout << "test" << std::endl;
-}
 
 std::string Aes::GenerateKey() {
     ExceptionLog exceptionLog(EXCEPTIONLOG);
