@@ -2,7 +2,6 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <string>
-#include <ctime>
 #include <cstdlib>
 #include <Windows.h>
 #include "Utils.h"
@@ -32,5 +31,5 @@ public:
     std::string GetVertificationCode();//获取最后一次验证码
 
     std::string ShowVertificationCode();//显示验证码窗口
-    bool TimeValid()//验证时间戳
+    bool TimeValid();//验证时间戳
 };

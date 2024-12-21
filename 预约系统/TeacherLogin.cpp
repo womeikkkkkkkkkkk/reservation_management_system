@@ -3,18 +3,21 @@
 #include "Utils.h"
 #include "ExceptionLog.h"
 
-void TeacherLogin(std::string FileName) {
-    //数据初始化
+void TeacherLogin(std::string FileName)
+{
+    // 数据初始化
     ExceptionLog exceptionLog(EXCEPTIONLOG);
-    try {
+    try
+    {
         std::ifstream ifs;
         ifs.open(FileName, std::ios::in);
-        if (!ifs.is_open()) {
+        if (!ifs.is_open())
+        {
             printFileNotFound();
             ifs.close();
             return;
         }
-        //输入账号密码
+        // 输入账号密码
         Identity* person = nullptr;
 
         int id;
@@ -23,67 +26,78 @@ void TeacherLogin(std::string FileName) {
         std::cin >> id;
         printInputPassword();
         std::cin >> passward;
-        //验证
+        // 验证
         int fid;
         std::string fname;
         std::string encryptedFpassward;
         std::string logMsg;
 
         bool flag = false;
-        while (ifs >> fid && ifs >> fname && ifs >> encryptedFpassward) {
-            if (id == fid) {
+        while (ifs >> fid && ifs >> fname && ifs >> encryptedFpassward)
+        {
+            if (id == fid)
+            {
                 flag = true;
                 Aes aes;
                 std::string key = aes.GetKey();
                 std::string decryptedPassward = Aes::Decrypt(encryptedFpassward, key);
-                if (passward == encryptedFpassward) {//验证通过
-                    logMsg = Utils::GetCurrentTime(TEACHER_LOGIN_SUCCESS);
+                if (passward == encryptedFpassward)
+                { // 验证通过
+                    logMsg = Utils::GetCurrentTimes(TEACHER_LOGIN_SUCCESS);
                     printLoginTeacherSuccess();
-                    exceptionLog.LogException(logMsg);//验证通过信息
+                    exceptionLog.LogException(logMsg); // 验证通过信息
 
                     person = new Teacher(id, fname, passward);
-                    if (person == nullptr) {//内存是否分配成功
+                    if (person == nullptr)
+                    { // 内存是否分配成功
                         printLoginTeacherFailed();
-                        logMsg = Utils::GetCurrentTime(CREATER_TEACHER_FALIED);
-                        exceptionLog.LogException(logMsg);//分配失败
-                    } 
-                    else{
-                        logMsg = Utils::GetCurrentTime(CREATER_TEACHER_SUCCESS);
-                        exceptionLog.LogException(logMsg);//分配成功
-                        TeacherSecondMenu(person);//进入教师二级菜单
+                        logMsg = Utils::GetCurrentTimes(CREATER_TEACHER_FALIED);
+                        exceptionLog.LogException(logMsg); // 分配失败
+                    }
+                    else
+                    {
+                        logMsg = Utils::GetCurrentTimes(CREATER_TEACHER_SUCCESS);
+                        exceptionLog.LogException(logMsg); // 分配成功
+                        TeacherSecondMenu(person);         // 进入教师二级菜单
                         return;
                     }
                 }
-                else {
-                    printPasswardError();//密码错误
-                    logMsg = Utils::GetCurrentTime(PASSWARD_ERROR);
+                else
+                {
+                    printPasswardError(); // 密码错误
+                    logMsg = Utils::GetCurrentTimes(PASSWARD_ERROR);
                     exceptionLog.LogException(logMsg);
                     return;
                 }
             }
         }
-        if (flag == false) {//ID不存在
+        if (flag == false)
+        { // ID不存在
             printIdError();
-            logMsg = Utils::GetCurrentTime(ID_NO_EXIST);
+            logMsg = Utils::GetCurrentTimes(ID_NO_EXIST);
             exceptionLog.LogException(logMsg);
         }
-        else {//非法登录
+        else
+        { // 非法登录
             printIllegalLogin();
-            logMsg = Utils::GetCurrentTime(ILLEGAL_LOGIN);
+            logMsg = Utils::GetCurrentTimes(ILLEGAL_LOGIN);
             exceptionLog.LogException(logMsg);
         }
     }
-    catch (const std::ios_base::failure& e) {
-        std::string logMsg = Utils::GetCurrentTime(LOAD_FILE_ERROR);
+    catch (const std::ios_base::failure& e)
+    {
+        std::string logMsg = Utils::GetCurrentTimes(LOAD_FILE_ERROR);
         exceptionLog.LogException(logMsg);
         return;
     }
-    catch (const std::runtime_error& e) {
-        std::string logMsg = Utils::GetCurrentTime(OPERATE_ABNORMALLY);
+    catch (const std::runtime_error& e)
+    {
+        std::string logMsg = Utils::GetCurrentTimes(OPERATE_ABNORMALLY);
         exceptionLog.LogException(logMsg);
     }
-    catch (...) {
-        std::string logMsg = Utils::GetCurrentTime(UNKNOWN_EXCEPTION_OCCURRED);
+    catch (...)
+    {
+        std::string logMsg = Utils::GetCurrentTimes(UNKNOWN_EXCEPTION_OCCURRED);
         exceptionLog.LogException(logMsg);
     }
 }
