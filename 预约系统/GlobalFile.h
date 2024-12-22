@@ -81,7 +81,6 @@ const std::string FIND_FALIED = "查找失败";
 
 const std::string CIN_ERROR = "输入错误";
 
-const char* TIME_STYLE = "%Y - %m - %d %H:%M:%S";
 const std::string TIME_STYLE_ERROR = "日期时间格式错误！";
 enum {
     // 0学生  1教师  2 管理员

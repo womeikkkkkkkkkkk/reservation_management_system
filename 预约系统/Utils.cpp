@@ -10,7 +10,7 @@ std::string Utils::GetCurrentTimes() {
 std::string Utils::GetCurrentTimes(std::string s) {
     std::time_t CurrentTime = std::time(nullptr);
     char buffer[80];
-    std::strftime(buffer, sizeof(buffer), TIME_STYLE, std::localtime(&CurrentTime));
+    std::strftime(buffer, sizeof(buffer), "%Y - %m - %d %H:%M:%S", std::localtime(&CurrentTime));
     return "[" + std::string(buffer) + "]" + s;
 }
 
@@ -19,7 +19,7 @@ bool Utils::TimeCmp(const std::string& timeStr1, const std::string& timeStr2) {
         {
             struct tm timeinfo = {};
             std::istringstream ss(datetimeStr);
-            ss >> std::get_time(&timeinfo, TIME_STYLE);
+            ss >> std::get_time(&timeinfo, "%Y - %m - %d %H:%M:%S");
             if (ss.fail()) {
                 std::cerr << TIME_STYLE_ERROR << std::endl;
                 return -1;
