@@ -86,18 +86,6 @@ void ManagerLogin(std::string FileName)
             exceptionLog.LogException(logMsg);
         }
     }
-    catch (const std::ios_base::failure& e)
-    {
-        std::string logMsg = Utils::GetCurrentTimes(LOAD_FILE_ERROR);
-        exceptionLog.LogException(logMsg);
-        return;
-    }
-    catch (const std::runtime_error& e)
-    {
-        std::string logMsg = Utils::GetCurrentTimes(OPERATE_ABNORMALLY);
-        exceptionLog.LogException(logMsg);
-        return;
-    }
     catch (...)
     {
         std::string logMsg = Utils::GetCurrentTimes(UNKNOWN_EXCEPTION_OCCURRED);

@@ -83,12 +83,6 @@ void StudentLogin(std::string FileName)
             return;
         }
     }
-    catch (const std::ios_base::failure& e)
-    {
-        std::string logMsg = Utils::GetCurrentTimes(LOAD_FILE_ERROR);
-        exceptionLog.LogException(logMsg);
-        return;
-    }
     catch (...)
     {
         std::string logMsg = Utils::GetCurrentTimes(UNKNOWN_EXCEPTION_OCCURRED);
