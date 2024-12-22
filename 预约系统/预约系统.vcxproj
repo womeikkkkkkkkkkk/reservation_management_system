@@ -138,44 +138,62 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Aes.h" />
-    <ClInclude Include="ComputerRoom.h" />
-    <ClInclude Include="ExceptionLog.h" />
-    <ClInclude Include="GlobalFile.h" />
-    <ClInclude Include="ManagerLogin.h" />
-    <ClInclude Include="ManagerSecondMenuIn.h" />
-    <ClInclude Include="OrderFile.h" />
-    <ClInclude Include="OutPutMessages.h" />
+    <ClInclude Include="CaptchaUtils.h" />
+    <ClInclude Include="DatabaseManager.h" />
+    <ClInclude Include="EncryptionManager.h" />
+    <ClInclude Include="EncryptionUtils.h" />
     <ClInclude Include="Identity.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="LoginManager.h" />
+    <ClInclude Include="LogManager.h" />
     <ClInclude Include="Manager.h" />
+    <ClInclude Include="ManagerDAO.h" />
+    <ClInclude Include="ManagerDTO.h" />
+    <ClInclude Include="ManagerMenu.h" />
+    <ClInclude Include="MessageManager.h" />
+    <ClInclude Include="ReservationDAO.h" />
+    <ClInclude Include="ReservationDTO.h" />
+    <ClInclude Include="ReservationManager.h" />
+    <ClInclude Include="RoomManager.h" />
     <ClInclude Include="Student.h" />
-    <ClInclude Include="StudentLogin.h" />
-    <ClInclude Include="StudentSecondMenuIn.h" />
+    <ClInclude Include="StudentDAO.h" />
+    <ClInclude Include="StudentDTO.h" />
+    <ClInclude Include="StudentMenu.h" />
     <ClInclude Include="Teacher.h" />
-    <ClInclude Include="TeacherLogin.h" />
-    <ClInclude Include="TeacherSecondMenuIn.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="VertificationCode.h" />
+    <ClInclude Include="TeacherDAO.h" />
+    <ClInclude Include="TeacherDTO.h" />
+    <ClInclude Include="TeacherMenu.h" />
+    <ClInclude Include="TimeUtils.h" />
+    <ClInclude Include="VerificationCodeManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Aes.cpp" />
-    <ClCompile Include="ComputerRoom.cpp" />
-    <ClCompile Include="ExceptionLog.cpp" />
+    <ClCompile Include="CaptchaUtils.cpp" />
+    <ClCompile Include="DatabaseManager.cpp" />
+    <ClCompile Include="EncryptionManager.cpp" />
+    <ClCompile Include="EncryptionUtils.cpp" />
     <ClCompile Include="Identity.cpp" />
-    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="LoginManager.cpp" />
+    <ClCompile Include="LogManager.cpp" />
     <ClCompile Include="Manager.cpp" />
-    <ClCompile Include="ManagerLogin.cpp" />
-    <ClCompile Include="ManagerSecondMenuIn.cpp" />
-    <ClCompile Include="OrderFile.cpp" />
-    <ClCompile Include="OutPutMessages.cpp" />
+    <ClCompile Include="ManagerDAO.cpp" />
+    <ClCompile Include="ManagerDTO.cpp" />
+    <ClCompile Include="ManagerMenu.cpp" />
+    <ClCompile Include="MessageManager.cpp" />
+    <ClCompile Include="ReservationDAO.cpp" />
+    <ClCompile Include="ReservationDTO.cpp" />
+    <ClCompile Include="ReservationManager.cpp" />
+    <ClCompile Include="RoomManager.cpp" />
     <ClCompile Include="Student.cpp" />
-    <ClCompile Include="StudentLogin.cpp" />
-    <ClCompile Include="StudentSecondMenuIn.cpp" />
+    <ClCompile Include="StudentDAO.cpp" />
+    <ClCompile Include="StudentDTO.cpp" />
+    <ClCompile Include="StudentMenu.cpp" />
     <ClCompile Include="Teacher.cpp" />
-    <ClCompile Include="TeacherLogin.cpp" />
-    <ClCompile Include="TeacherSecondMenuIn.cpp" />
-    <ClCompile Include="Utils.cpp" />
-    <ClCompile Include="VertificationCode.cpp" />
+    <ClCompile Include="TeacherDAO.cpp" />
+    <ClCompile Include="TeacherDTO.cpp" />
+    <ClCompile Include="TeacherMenu.cpp" />
+    <ClCompile Include="TimeUtils.cpp" />
+    <ClCompile Include="VerificationCodeManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Admin.txt" />
@@ -188,7 +206,7 @@
     <Text Include="Aes字典.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="项目结构.txt" />
+    <None Include="项目结构.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
