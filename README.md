@@ -1,2 +1,12 @@
-# 预约管理系统【C++/MySQL】
-![预约系统架构分析](https://github.com/user-attachments/assets/585f1a76-c4f1-472d-a53e-17a23b8515d2)
+# 预约管理系统【C++/MySQL/Cryptopp/opencv】
+
+## 环境配置
+
+开发工具：VS2022 使用C++17和v143工具集
+
+加密库：CryptoPP库
+
+图形库：Opencv库
+
+数据库：MySQL8.4.0
+
