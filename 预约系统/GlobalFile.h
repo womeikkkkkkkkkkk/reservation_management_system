@@ -7,7 +7,7 @@
 #define TEACHER_FILE "Teacher.txt"//教师表
 #define COMPUTER_FILE "ComputerRoom.txt"//机房表
 #define ORDER_FILE "Order.txt"//预约表
-#define EXCEPTIONLOG "ExceptionLog.txt"//日志
+#define EXCEPTIONLOG "Exception.log"//日志
 #define KEY "Key.txt"//密钥文件
 
 const int  NULLID = -1;//初始化ID

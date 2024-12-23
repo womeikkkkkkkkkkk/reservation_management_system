@@ -43,7 +43,6 @@ size_t ExceptionLog::GetFileSize(const std::string& filename)
 // 删除最旧的备份文件
 void ExceptionLog::RemoveOldBackups() const
 {
-    // 使用 C++17 的 filesystem 库
     std::vector<std::string> backupFiles;
 
     for (const auto& entry : fs::directory_iterator("."))
@@ -129,7 +128,7 @@ const std::string ExceptionLog::LogLevelToString(LogLevel level)
         return "INFO";
     case WARN:
         return "WARN";
-    case ERROR:
+    case ERROR_:
         return "ERROR";
     case DEBUG:
         return "DEBUG";

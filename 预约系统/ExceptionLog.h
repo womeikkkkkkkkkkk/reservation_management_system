@@ -41,7 +41,7 @@ private:
 
 public:
     // 获取单例实例
-    static ExceptionLog* GetInstance(const std::string& LogFilePath = "exception.log",
+    static ExceptionLog* GetInstance(const std::string& LogFilePath = EXCEPTIONLOG,
         size_t maxLogFileSize = 10 * 1024 * 1024, // 默认 10MB
         size_t maxBackupFiles = 5);               // 默认最多保留 5 个备份文件
 
@@ -53,7 +53,7 @@ public:
     {
         INFO,
         WARN,
-        ERROR,
+        ERROR_,
         DEBUG
     };
 
