@@ -108,6 +108,8 @@
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\..\..\include;..\..\..\include\opencv2;..\..\..\include\mysql;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc11</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,6 +129,8 @@
       <ConformanceMode>true</ConformanceMode>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\..\..\include;..\..\..\include\opencv2;..\..\..\include\mysql;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,8 +144,11 @@
   <ItemGroup>
     <ClInclude Include="CaptchaUtils.h" />
     <ClInclude Include="DatabaseManager.h" />
+    <ClInclude Include="DLLInjectionProtection.h" />
     <ClInclude Include="EncryptionManager.h" />
     <ClInclude Include="EncryptionUtils.h" />
+    <ClInclude Include="ExceptionLog.h" />
+    <ClInclude Include="GlobalFile.h" />
     <ClInclude Include="Identity.h" />
     <ClInclude Include="Log.h" />
     <ClInclude Include="LoginManager.h" />
@@ -154,7 +161,8 @@
     <ClInclude Include="ReservationDAO.h" />
     <ClInclude Include="ReservationDTO.h" />
     <ClInclude Include="ReservationManager.h" />
-    <ClInclude Include="RoomManager.h" />
+    <ClInclude Include="ComputerRoomManager.h" />
+    <ClInclude Include="SQLInjectionProtection.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentDAO.h" />
     <ClInclude Include="StudentDTO.h" />
@@ -169,12 +177,15 @@
   <ItemGroup>
     <ClCompile Include="CaptchaUtils.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
+    <ClCompile Include="DLLInjectionProtection.cpp" />
     <ClCompile Include="EncryptionManager.cpp" />
     <ClCompile Include="EncryptionUtils.cpp" />
+    <ClCompile Include="ExceptionLog.cpp" />
     <ClCompile Include="Identity.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="LoginManager.cpp" />
     <ClCompile Include="LogManager.cpp" />
+    <ClCompile Include="Main.cpp" />
     <ClCompile Include="Manager.cpp" />
     <ClCompile Include="ManagerDAO.cpp" />
     <ClCompile Include="ManagerDTO.cpp" />
@@ -183,7 +194,8 @@
     <ClCompile Include="ReservationDAO.cpp" />
     <ClCompile Include="ReservationDTO.cpp" />
     <ClCompile Include="ReservationManager.cpp" />
-    <ClCompile Include="RoomManager.cpp" />
+    <ClCompile Include="ComputerRoomManager.cpp" />
+    <ClCompile Include="SQLInjectionProtection.cpp" />
     <ClCompile Include="Student.cpp" />
     <ClCompile Include="StudentDAO.cpp" />
     <ClCompile Include="StudentDTO.cpp" />
