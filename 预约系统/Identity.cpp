@@ -1,33 +1,37 @@
 #pragma once
 #include "Identity.h"
 
-Identity::Identity() {
-    this->name = LOGIN_INIT_ID;
-    this->passward = LOGIN_INIT_NAME;
-    this->status = LOGIN_INIT_STATUS;
-}
-
-Identity::Identity(int id, std::string name, std::string passward) {
-    this->SetName(name);
-    this->SetPasswards(passward);
-}
-
-void Identity::SetName(const std::string& name)//
+void Identity::setName(const std::string& name)//
 {
     this->name = name;
 }
 
-void Identity::SetPasswards(const std::string& passward)
+void Identity::setPassward(const std::string& passward)
 {
     this->passward = passward;
 }
 
-std::string Identity::GetName()const
+void Identity::setStatus(bool status)
+{
+    this->status = status;
+}
+
+int Identity::getId() const
+{
+    return this->id;
+}
+
+std::string Identity::getName()const
 {
     return this->name;
 }
 
-std::string Identity::GetPassward() const
+std::string Identity::getPassward() const
 {
     return this->passward;
+}
+
+bool Identity::getStatus()const
+{
+    return this->status;
 }

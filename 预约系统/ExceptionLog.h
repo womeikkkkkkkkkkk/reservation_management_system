@@ -1,3 +1,5 @@
+#pragma once
+#include "TimeUtils.h"
 #include <fstream>
 #include <string>
 #include <mutex>

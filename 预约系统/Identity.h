@@ -1,28 +1,29 @@
 #pragma once
 #include <string>
-#include <iostream>
 #include "GlobalFile.h"
 
 class Identity // 人员基类
 {
-private:
+protected:
+    int id;
     std::string name;     // 用户名
     std::string passward; // 密码
     bool status;//登录状态
-protected:
 
 public:
+    Identity() : id(NULLID), status(false) {}
+    Identity(int id, const std::string& name, const std::string& passward) : id(id), name(name), passward(passward), status(false) {}
+
     virtual void operMenu() = 0;//二级菜单入口，可通过叠加if，switch实现多级菜单
 
-    virtual void ReSetName(Identity& person, const std::string name) = 0;//修改用户名
-    virtual void ReSetPasswards(Identity& person, const std::string passward, const std::string oldpassward) = 0;//修改密码
+    virtual void reSetName(const std::string& name) = 0;//修改用户名
+    virtual void reSetPassward(const std::string& oldpassward, const std::string& newpassward) = 0;//修改密码
 
-    Identity();//默认构造
-    Identity(int id, std::string name, std::string passward);//构造
-
-    void SetName(const std::string& name);//设置名字
-    void SetPasswards(const std::string& passward);//设置密码
-
-    std::string GetName()const;//获取名字
-    std::string GetPassward() const;//获取密码
+    void setName(const std::string& name);//设置名字
+    void setPassward(const std::string& passward);//设置密码
+    void setStatus(bool status);
+    int getId() const;//
+    std::string getName()const;//获取名字
+    std::string getPassward() const;//获取密码
+    bool getStatus()const;
 };

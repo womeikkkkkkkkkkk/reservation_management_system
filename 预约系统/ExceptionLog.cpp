@@ -114,12 +114,9 @@ void ExceptionLog::LogException(const std::string& ExceptionMessage)
 std::string ExceptionLog::GetFormattedLogMessage(const std::string& ExceptionMessage, LogLevel level)
 {
     std::stringstream ss;
-    std::time_t now = std::time(nullptr);
-    std::tm* localTime = std::localtime(&now);
+    std::string currentTime = Utils::GetCurrentTimes("%Y-%m-%d %H:%M:%S");
 
-    ss << "[" << std::put_time(localTime, "%Y-%m-%d %H:%M:%S") << "] "
-        << "[" << LogLevelToString(level) << "] "
-        << ExceptionMessage;
+    ss << currentTime << "[" << LogLevelToString(level) << "] " << ExceptionMessage;
     return ss.str();
 }
 
