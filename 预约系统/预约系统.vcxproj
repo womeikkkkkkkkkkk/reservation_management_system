@@ -220,6 +220,7 @@
     <Text Include="Aes字典.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="开发日志.md" />
     <None Include="项目结构.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
