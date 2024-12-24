@@ -109,13 +109,13 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalIncludeDirectories>..\..\..\include;..\..\..\include\opencv2;..\..\..\include\mysql;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <LanguageStandard_C>stdc11</LanguageStandard_C>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalOptions>cryptlib.lib %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>opencv_world4100d.lib;libmysql.lib;cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world4100d.lib;libmysql.lib;cryptlib.lib;glew32d.lib;glew32sd.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\lib;..\..\..\lib\Debug</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -138,11 +138,13 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\lib;..\..\..\lib\Release</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world4100.lib;libmysql.lib;cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world4100.lib;libmysql.lib;cryptlib.lib;glew32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CaptchaUtils.h" />
+    <ClInclude Include="ComputerRoomDAO.h" />
+    <ClInclude Include="ComputerRoomDTO.h" />
     <ClInclude Include="DatabaseManager.h" />
     <ClInclude Include="DLLInjectionProtection.h" />
     <ClInclude Include="EncryptionManager.h" />
@@ -177,12 +179,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CaptchaUtils.cpp" />
+    <ClCompile Include="ComputerRoomDAO.cpp" />
+    <ClCompile Include="ComputerRoomDTO.cpp" />
     <ClCompile Include="DatabaseManager.cpp" />
     <ClCompile Include="DLLInjectionProtection.cpp" />
     <ClCompile Include="EncryptionManager.cpp" />
     <ClCompile Include="EncryptionUtils.cpp" />
     <ClCompile Include="ExceptionLog.cpp" />
-    <ClCompile Include="Identity.cpp" />
     <ClCompile Include="Log.cpp" />
     <ClCompile Include="LoginManager.cpp" />
     <ClCompile Include="LogManager.cpp" />

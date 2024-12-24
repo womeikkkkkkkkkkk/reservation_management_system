@@ -1,19 +1,25 @@
 #pragma once
+#ifndef MANAGER_H
+#define MANAGER_H
 #include "Identity.h"
-#include "ManagerDTO.h"
-#include "ManagerDAO.h"
+#include <string>
 #include <iostream>
 
-class Manager : public Identity
-{
+class Manager : public Identity {
 private:
-    ManagerDAO* dao;
+    std::string username;
+    std::string password;
+    std::string managerID;
+
 public:
-    Manager(int id, const std::string& name, const std::string& passward, ManagerDAO* dao) : Identity(id, name, passward), dao(dao) {}
-    virtual void operMenu()override;
-    virtual void reSetName(const std::string& name)override;
-    virtual void reSetPassward(const std::string& oldpassward, const std::string& newpassward)override;
-    void addManager(const ManagerDTO& managerDTO);
-    void removeManager(int id);
-    ManagerDTO findManager(int id);
+    Manager(const std::string& username, const std::string& password, const std::string& managerID) : username(username), password(password), managerID(managerID) {}
+
+    // 重写验证逻辑
+    bool validateCredentials(const std::string& inputUsername, const std::string& inputPassword) override;
+    // 显示管理员信息
+    void showUserInfo() const override;
+    // 获取管理员ID
+    std::string getManagerID() const;
 };
+
+#endif

@@ -111,6 +111,15 @@
     <ClInclude Include="GlobalFile.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="RegexValidator.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerRoomDAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ComputerRoomDTO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Manager.cpp">
@@ -120,9 +129,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Teacher.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Identity.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="CaptchaUtils.cpp">
@@ -206,6 +212,15 @@
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="RegexValidator.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerRoomDAO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ComputerRoomDTO.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Admin.txt">
@@ -235,5 +250,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="项目结构.md" />
+    <None Include="开发日志.md" />
   </ItemGroup>
 </Project>

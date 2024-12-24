@@ -1,17 +1,25 @@
 #pragma once
+#ifndef STUDENT_H
+#define STUDENT_H
 #include "Identity.h"
-#include "StudentDAO.h"
-#include "StudentDTO.h"
+#include <string>
 #include <iostream>
 
-class Student :public Identity
-{
+class Student : public Identity {
 private:
-    StudentDAO* dao;
+    std::string username;
+    std::string password;
+    std::string studentID;
+
 public:
-    Student(int id, const std::string& name, const std::string& password, StudentDAO* dao) : Identity(id, name, password), dao(dao) {}
-    virtual void operMenu() override;
-    virtual void reSetName(const std::string& name) override;
-    virtual void reSetPassward(const std::string& oldPassward, const std::string& newPassward) override;
-}
-;
+    Student(const std::string& username, const std::string& password, const std::string& studentID) : username(username), password(password), studentID(studentID) {}
+
+    // 重写验证逻辑
+    bool validateCredentials(const std::string& inputUsername, const std::string& inputPassword) override;
+    // 显示学生信息
+    void showUserInfo() const override;
+    // 获取学生ID
+    std::string getStudentID() const;
+};
+
+#endif
