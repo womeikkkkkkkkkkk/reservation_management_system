@@ -121,6 +121,17 @@ const std::string LOGOUT_FALIED = "退出失败";
 const std::string TO_STRING_ERROR = "转换字符串错误";
 const std::string TO_STRING_SUCCESS = "转换字符串成功";
 const std::string TO_STRING_FALIED = "转换字符串失败";
+
+const std::string POTENTIAL_SQL_INJECTION_DETECTED = "检测到潜在的SQL注入攻击";
+const std::string MYSQL_STMT_INIT_FALIED = "初始化MYSQL_STMT失败";
+const std::string MYSQL_STMT_PREPARE_FALIED = "准备MYSQL_STMT失败";
+const std::string MYSQL_STMT_PARAM_FALIED = "设置MYSQL_STMT参数失败";
+const std::string MYSQL_STMT_EXECUTE_FAILED = "执行MYSQL_STMT失败";
+const std::string MYSQL_INIT_STATEMENT_FALIED = "初始化MYSQL语句失败";
+const std::string MYSQL_PREPARE_STATEMENT_FALIED = "准备语句失败：";
+const std::string MYSQL_BIND_PAEAMETERS_BIND_FALIED = "绑定参数失败：";
+const std::string MYSQL_EXECUTE_STATEMENT_FALIED = "执行语句失败：";
+const std::string MYSQ_GET_RESULT_METADATA_FALIED = "获取结果元数据失败：";
 enum {
     // 0学生  1教师  2 管理员
     STUDENTID,

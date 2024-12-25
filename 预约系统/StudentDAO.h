@@ -2,7 +2,10 @@
 #ifndef STUDENTDAO_H
 #define STUDENTDAO_H
 #include "StudentDTO.h"
+#include "ExceptionLog.h"
+#include "DatabaseManager.h"
 #include <vector>
+#include <mysql.h>
 
 class StudentDAO {
 public:
