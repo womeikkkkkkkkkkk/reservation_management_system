@@ -6,15 +6,10 @@
 
 加密库：CryptoPP库-8.7.0
 
-图形库：Opencv库-4.10.0
-
-      OpenGL库
-      
-      GLEW库-2.1.0
-      
-      GLFW库-3.4
-      
-      ImGUI库
-      
+图形库：Opencv库-4.10.0    
+                  OpenGL库  
+                  GLEW库-2.1.0    
+                  GLFW库-3.4  
+                  ImGUI库 
 数据库：MySQL-8.4.0
 
