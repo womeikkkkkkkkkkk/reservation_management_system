@@ -1,4 +1,6 @@
 #pragma once
+#ifndef EXCEPTIONLOG_H
+#define EXCEPTIONLOG_H
 #include "TimeUtils.h"
 #include <fstream>
 #include <string>
@@ -16,8 +18,7 @@
 #include <algorithm>
 namespace fs = std::filesystem;
 
-class ExceptionLog
-{
+class ExceptionLog {
 private:
     static ExceptionLog* instance; // 单例实例
     static std::mutex mutex;       // 互斥锁，确保线程安全
@@ -49,8 +50,7 @@ public:
     void LogException(const std::string& ExceptionMessage);
 
     // 日志级别枚举
-    enum LogLevel
-    {
+    enum LogLevel {
         INFO,
         WARN,
         ERROR_,
@@ -70,7 +70,7 @@ public:
     ExceptionLog(const ExceptionLog&) = delete;
     ExceptionLog& operator=(const ExceptionLog&) = delete;
 };
-
+#endif
 /*
 // 示例使用
 int main()

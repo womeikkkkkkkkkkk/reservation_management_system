@@ -14,17 +14,16 @@ std::string Utils::GetCurrentTimes(std::string s) {
     return "[" + std::string(buffer) + "]" + s;
 }
 
-bool Utils::TimeCmp(const std::string& timeStr1, const std::string& timeStr2) {
-    auto convertToSeconds = [](const std::string& datetimeStr) -> time_t
-        {
-            struct tm timeinfo = {};
-            std::istringstream ss(datetimeStr);
-            ss >> std::get_time(&timeinfo, "%Y - %m - %d %H:%M:%S");
-            if (ss.fail()) {
-                std::cerr << TIME_STYLE_ERROR << std::endl;
-                return -1;
-            }
-            return mktime(&timeinfo);
+bool Utils::timeCmp(const std::string& timeStr1, const std::string& timeStr2) {
+    auto convertToSeconds = [](const std::string& datetimeStr) -> time_t {
+        struct tm timeinfo = {};
+        std::istringstream ss(datetimeStr);
+        ss >> std::get_time(&timeinfo, "%Y - %m - %d %H:%M:%S");
+        if (ss.fail()) {
+            std::cerr << TIME_STYLE_ERROR << std::endl;
+            return -1;
+        }
+        return mktime(&timeinfo);
         };
 
     time_t seconds1 = convertToSeconds(timeStr1);

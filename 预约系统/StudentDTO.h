@@ -3,11 +3,13 @@
 #define STUDENTDTO_H
 #include <string>
 
-class StudentDTO {
-public:
+class StudentDTO
+{
+private:
     std::string studentname;
     std::string password;
     std::string studentID;
+public:
 
     StudentDTO(const std::string& username, const std::string& password, const std::string& studentID) : studentname(username), password(password), studentID(studentID) {}
 

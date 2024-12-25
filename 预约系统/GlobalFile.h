@@ -84,7 +84,7 @@ const std::string FIND_FALIED = "查找失败";
 
 const std::string CIN_ERROR = "输入错误";
 const std::string TIME_STYLE_ERROR = "日期时间格式错误！";
-
+const std::string TIME_ERROR = "时间错误";
 const std::string LOGOUT_SUCCESS = "退出成功";
 enum {
     // 0学生  1教师  2 管理员
