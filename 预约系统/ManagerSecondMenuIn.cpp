@@ -20,23 +20,19 @@ void ManagerSecondMenu(Identity* manager) {
             man->FindPerson(manager->GetName());
         }
         else if (select == 4) {
-            printViewAccount();
-            man->ShowPerson();
-        }
-        else if (select == 4) {
             printViewComputerRoom();
             man->ShowComputer();
         }
-        else if (select == 4) {
+        else if (select == 5) {
             printClearReservation();
             man->CleanFile();
         }
-        else if (select == 5) {
+        else if (select == 6) {
             printResetName();
             std::string s;  std::cin >> s;
             man->ReSetName(*man, s);
         }
-        else if (select == 6) {
+        else if (select == 7) {
             printResetPassward();
             std::string s, ss;  std::cin >> s >> ss;
             man->ReSetPasswards(*man, s, ss);
