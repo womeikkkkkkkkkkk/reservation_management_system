@@ -1,21 +1,16 @@
 #include "ComputerRoomDAO.h"
 
-ComputerRoomDTO ComputerRoomDAO::GetComputerRoomById(int id)
-{
+void ComputerRoomDAO::addComputerRoom(const ComputerRoomDTO& computerRoom) {
 }
 
-std::vector<ComputerRoomDTO> ComputerRoomDAO::GetAllComputerRooms()
-{
+void ComputerRoomDAO::deleteComputerRoom(const std::string& computerRoomID) {
 }
 
-void ComputerRoomDAO::InsertComputerRoom(const ComputerRoomDTO& cr)
-{
+void ComputerRoomDAO::updateComputerRoom(const ComputerRoomDTO& computerRoom) {
 }
 
-void ComputerRoomDAO::UpdateComputerRoom(int id, const ComputerRoomDTO& updatedCR)
-{
+std::vector<ComputerRoomDTO> ComputerRoomDAO::getAllComputerRooms() {
 }
 
-void ComputerRoomDAO::DeleteComputerRoom(int id)
-{
+ComputerRoomDTO ComputerRoomDAO::getComputerRoom(const std::string& computerRoomID) {
 }

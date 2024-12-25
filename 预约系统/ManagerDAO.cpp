@@ -1,21 +1,15 @@
 #include "ManagerDAO.h"
 
-ManagerDTO ManagerDAO::getManagerByUsername(const std::string& username)
-{
+void ManagerDAO::addManager(const ManagerDTO& manager) {
+}
+void ManagerDAO::deleteManager(const std::string& managerID) {
 }
 
-std::vector<ManagerDTO> ManagerDAO::getAllManagers()
-{
+void ManagerDAO::updateManager(const ManagerDTO& manager) {
 }
 
-void ManagerDAO::insertManager(const ManagerDTO& managerDTO)
-{
+std::vector<ManagerDTO> ManagerDAO::getAllManagers() {
 }
 
-void ManagerDAO::updateManager(const std::string& username, const ManagerDTO& updatedManagerDTO)
-{
-}
-
-void ManagerDAO::deleteManager(const std::string& username)
-{
+ManagerDTO ManagerDAO::getManager(const std::string& managerID) {
 }

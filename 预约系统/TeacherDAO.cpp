@@ -1,21 +1,16 @@
 #include "TeacherDAO.h"
 
-TeacherDTO TeacherDAO::getTeacherByUsername(const std::string& username)
-{
+void TeacherDAO::addTeacher(const TeacherDTO& teacher) {
 }
 
-std::vector<TeacherDTO> TeacherDAO::getAllTeachers()
-{
+void TeacherDAO::deleteTeacher(const std::string& teacherID) {
 }
 
-void TeacherDAO::insertTeacher(const TeacherDTO& teacherDTO)
-{
+void TeacherDAO::updateTeacher(const TeacherDTO& teacher) {
 }
 
-void TeacherDAO::updateTeacher(const TeacherDTO& teacherDTO)
-{
+std::vector<TeacherDTO> TeacherDAO::getAllTeachers() {
 }
 
-void TeacherDAO::deleteTeacher(const TeacherDTO& teacherDTO)
-{
+TeacherDTO TeacherDAO::getTeacher(const std::string& teacherID) {
 }

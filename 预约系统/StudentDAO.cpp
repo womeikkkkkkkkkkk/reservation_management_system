@@ -1,21 +1,16 @@
 #include "StudentDAO.h"
 
-StudentDTO StudentDAO::getStudentByUsername(const std::string& username)
-{
+void StudentDAO::addStudent(const StudentDTO& student) {
 }
 
-std::vector<StudentDTO> StudentDAO::getAllStudents()
-{
+void StudentDAO::deleteStudent(const std::string& studentID) {
 }
 
-void StudentDAO::insertStudent(const StudentDTO& studentDTO)
-{
+void StudentDAO::updateStudent(const StudentDTO& student) {
 }
 
-void StudentDAO::updateStudent(const StudentDTO& studentDTO)
-{
+std::vector<StudentDTO> StudentDAO::getAllStudents() {
 }
 
-void StudentDAO::deleteStudent(const StudentDTO& studentDTO)
-{
+StudentDTO StudentDAO::getStudent(const std::string& studentID) {
 }
