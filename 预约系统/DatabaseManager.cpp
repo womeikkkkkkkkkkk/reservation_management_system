@@ -2,18 +2,18 @@
 
 void DatabaseManager::executeQuery(const std::string& query, const std::vector<MYSQL_BIND>& binds) {
     try {
-        MYSQL_SLMT* stmt = mysql_stmt_init(conn);
+        MYSQL_STMT* stmt = mysql_stmt_init(conn);
         if (!stmt) {
             throw std::runtime_error(MYSQL_STMT_INIT_FALIED);
         }
         if (mysql_stmt_prepare(stmt, query.c_str(), query.length())) {
             throw std::runtime_error(MYSQL_STMT_PREPARE_FALIED + std::string(mysql_error(conn)));
         }
-        if (mysql_stmt_param(stmt, const_cast<MYSQL_BIND*>(binds.data()))) {
-            throw std::runtime_error(MYSQL_STMT_PARAM_FALIED + std::string(mysql_error(stmt)));
+        if (mysql_stmt_bind_param(stmt, const_cast<MYSQL_BIND*>(binds.data()))) {
+            throw std::runtime_error(MYSQL_STMT_PARAM_FALIED + std::string(mysql_error(conn)));
         }
         if (mysql_stmt_execute(stmt)) {
-            throw std::runtime_error(MYSQL_STMT_EXECUTE_FAILED + std::string(mysql_error(stmt)));
+            throw std::runtime_error(MYSQL_STMT_EXECUTE_FAILED + std::string(mysql_error(conn)));
         }
         mysql_stmt_close(stmt);
     }
