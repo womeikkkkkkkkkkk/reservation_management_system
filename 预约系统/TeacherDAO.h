@@ -4,19 +4,18 @@
 #include "TeacherDTO.h"
 #include <vector>
 
-class TeacherDAO
-{
+class TeacherDAO {
 public:
-    //DAO层的接口--CRUD
-    // 根据用户名获取教师
-    TeacherDTO getTeacherByUsername(const std::string& username);
+    //DAO层提供CRUD接口
+    // 添加教师
+    void addTeacher(const TeacherDTO& teacher);
+    // 删除教师
+    void deleteTeacher(const std::string& teacherID);
+    // 更新教师
+    void updateTeacher(const TeacherDTO& teacher);
     // 获取所有教师
     std::vector<TeacherDTO> getAllTeachers();
-    // 插入教师
-    void insertTeacher(const TeacherDTO& teacherDTO);
-    // 更新教师
-    void updateTeacher(const TeacherDTO& teacherDTO);
-    // 删除教师
-    void deleteTeacher(const TeacherDTO& teacherDTO);
+    // 获取教师
+    TeacherDTO getTeacher(const std::string& teacherID);
 };
 #endif

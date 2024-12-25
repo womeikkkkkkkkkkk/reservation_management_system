@@ -5,6 +5,7 @@ EncryptionManager::EncryptionManager() {
 }
 
 EncryptionManager::~EncryptionManager() {
+    this->key.clear();
 }
 
 void EncryptionManager::SetKey(const std::string& key) {

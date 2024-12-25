@@ -1,5 +1,4 @@
 #pragma once
 
-class ReservationManager
-{
+class ReservationManager {
 };

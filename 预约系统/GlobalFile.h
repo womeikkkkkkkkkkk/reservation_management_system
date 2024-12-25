@@ -83,9 +83,44 @@ const std::string TEACHER_EXIST = "查找教师成功";
 const std::string FIND_FALIED = "查找失败";
 
 const std::string CIN_ERROR = "输入错误";
-const std::string TIME_STYLE_ERROR = "日期时间格式错误！";
+const std::string CIN_SUCCESS = "输入正确";
+
+const std::string TIME_STYLE_ERROR = "日期时间格式错误";
+const std::string TIME_STYLE_SUCCESS = "日期时间格式正确";
+const std::string TIME_STYLE_CONFLICT = "日期时间格式冲突";
+
+const std::string CREATE_TIME_ERROR = "创建时间错误";
+const std::string CREATE_TIME_SUCCESS = "创建时间成功";
+const std::string CREATE_TIME_FALIED = "创建时间失败";
+const std::string CREATE_TIME_CONFLICT = "创建时间冲突";
+
+const std::string UPDATE_TIME_ERROR = "更新时间错误";
+const std::string UPDATE_TIME_SUCCESS = "更新时间成功";
+const std::string UPDATE_TIME_FALIED = "更新时间失败";
+const std::string UPDATE_TIME_CONFLICT = "更新时间冲突";
+
+const std::string STATUS_ERROR = "状态错误";
+const std::string STATUS_SUCCESS = "状态成功";
+const std::string STATUS_FALIED = "状态失败";
+const std::string STATUS_CONFLICT = "状态冲突";
+
 const std::string TIME_ERROR = "时间错误";
+const std::string TIME_SUCCESS = "时间成功";
+const std::string TIME_FALIED = "时间失败";
+const std::string TIME_CONFLICT = "时间冲突";
+
+const std::string DATE_ERROR = "日期错误";
+const std::string DATE_SUCCESS = "日期成功";
+const std::string DATE_FALIED = "日期失败";
+const std::string DATE_CONFLICT = "日期冲突";
+
+const std::string LOGOUT_ERROR = "退出错误";
 const std::string LOGOUT_SUCCESS = "退出成功";
+const std::string LOGOUT_FALIED = "退出失败";
+
+const std::string TO_STRING_ERROR = "转换字符串错误";
+const std::string TO_STRING_SUCCESS = "转换字符串成功";
+const std::string TO_STRING_FALIED = "转换字符串失败";
 enum {
     // 0学生  1教师  2 管理员
     STUDENTID,

@@ -33,14 +33,14 @@ public:
     std::string getCreateTime() const;
     std::string getUpdateTime() const;
 
-    void setReservationID(std::string reservationID);
-    void setUserID(std::string userID);
-    void setComputerroomID(std::string computerroomID);
-    void setDate(std::string date);
-    void setReservationTime(int reservationTime);
-    void setStatus(std::string status);
-    void setCreateTime(std::string createTime);
-    void setUpdateTime(std::string updateTime);
+    void setReservationID(std::string& reservationID);
+    void setUserID(std::string& userID);
+    void setComputerroomID(std::string& computerroomID);
+    void setDate(std::string& date);
+    void setReservationTime(int& reservationTime);
+    void setStatus(std::string& status);
+    void setCreateTime(std::string& createTime);
+    void setUpdateTime(std::string& updateTime);
 
     bool validDate() const;
     bool validTime() const;

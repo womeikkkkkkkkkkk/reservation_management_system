@@ -2,8 +2,7 @@
 #include <string>
 #include <regex>
 
-class RegexValidator
-{
+class RegexValidator {
 public:
     static bool validateUsername(const std::string& username);//用户名验证  字母、数字和下划线，长度为 4 到 20 个字符
     static bool validatePassward(const std::string& passward);//密码验证  至少一个小写字母、一个大写字母、一个数字和一个特殊符号

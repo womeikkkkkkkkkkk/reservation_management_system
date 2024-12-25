@@ -193,24 +193,31 @@ std::string ReservationDTO::getUpdateTime() const {
     return std::string(this->updateTime);
 }
 
-void ReservationDTO::setReservationID(std::string reservationID) {
+void ReservationDTO::setReservationID(std::string& reservationID) {
     this->reservationID = reservationID;
 }
 
-void ReservationDTO::setUserID(std::string userID) {
+void ReservationDTO::setUserID(std::string& userID) {
     this->userID = userID;
 }
 
-void ReservationDTO::setComputerroomID(std::string computerroomID) {
+void ReservationDTO::setComputerroomID(std::string& computerroomID) {
     this->computerroomID = computerroomID;
 }
 
-void ReservationDTO::setDate(std::string date) {
+void ReservationDTO::setDate(std::string& date) {
     try {
+        if (date.empty()) {
+            throw std::invalid_argument(DATE_ERROR);
+        }
         this->date = date;
         if (!validDate()) {
-            throw std::invalid_argument(TIME_ERROR);
+            throw std::invalid_argument(DATE_ERROR);
         }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
     }
     catch (std::exception& e) {
         ExceptionLog::GetInstance()->LogException(e.what());
@@ -221,13 +228,20 @@ void ReservationDTO::setDate(std::string date) {
         throw;
     }
 }
-void ReservationDTO::setReservationTime(int reservationTime) {
+void ReservationDTO::setReservationTime(int& reservationTime) {
     try {
+        if (reservationID.empty()) {
+            throw std::invalid_argument(TIME_ERROR);
+        }
         this->reservationTime = reservationTime;
         if (!validTime()) {
             throw std::invalid_argument(TIME_ERROR);
         }
     }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
     catch (std::exception& e) {
         ExceptionLog::GetInstance()->LogException(e.what());
         throw e;
@@ -238,46 +252,228 @@ void ReservationDTO::setReservationTime(int reservationTime) {
     }
 }
 
-void ReservationDTO::setStatus(std::string status) {
-    this->status = status;
+void ReservationDTO::setStatus(std::string& status) {
+    try {
+        if (status.empty()) {
+            throw std::invalid_argument(STATUS_ERROR);
+        }
+        this->status = status;
+        if (!validStatu()) {
+            throw std::invalid_argument(STATUS_ERROR);
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
 }
 
-void ReservationDTO::setCreateTime(std::string createTime) {
-    this->createTime = createTime;
+void ReservationDTO::setCreateTime(std::string& createTime) {
+    try {
+        if (createTime.empty()) {
+            throw std::invalid_argument(TIME_ERROR);
+        }
+        this->createTime = createTime;
+        if (!validCreateTime()) {
+            throw std::invalid_argument(TIME_ERROR);
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
 }
-
-void ReservationDTO::setUpdateTime(std::string updateTime) {
-    this->updateTime = updateTime;
+void ReservationDTO::setUpdateTime(std::string& updateTime) {
+    try {
+        if (updateTime.empty()) {
+            throw std::invalid_argument(TIME_ERROR);
+        }
+        this->updateTime = updateTime;
+        if (!validUpdateTime()) {
+            throw std::invalid_argument(TIME_ERROR);
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
 }
-
 bool ReservationDTO::validDate() const {
-    return validDays.find(date) != validDays.end();
+    try {
+        if (date.empty()) {
+            throw std::invalid_argument(DATE_ERROR);
+        }
+        else {
+            return validDays.find(date) != validDays.end();
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
+    return false;
 }
 
 bool ReservationDTO::validTime() const {
-    return validTimes.find(reservationTime) != validTimes.end();
+    try {
+        if (date.empty()) {
+            throw std::invalid_argument(DATE_ERROR);
+        }
+        else {
+            return validTimes.find(reservationTime) != validTimes.end();
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
+    return false;
 }
 
 bool ReservationDTO::validStatu() const {
-    return validStatus.find(status) != validStatus.end();
+    try {
+        if (date.empty()) {
+            throw std::invalid_argument(DATE_ERROR);
+        }
+        else {
+            return validStatus.find(status) != validStatus.end();
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
+    return false;
 }
 
 bool ReservationDTO::validCreateTime() const {
+    try {
+        if (createTime.empty()) {
+            throw std::invalid_argument(TIME_ERROR);
+        }
+        else if (validTime()) {
+            return true;
+        }
+        else {
+            throw std::invalid_argument(TIME_CONFLICT);
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
     return false;
 }
-
 bool ReservationDTO::validUpdateTime() const {
-    return false;
+    try {
+        if (createTime.empty()) {
+            throw std::invalid_argument(TIME_ERROR);
+        }
+        else if (validTime()) {
+            return true;
+        }
+        else {
+            throw std::invalid_argument(UPDATE_TIME_CONFLICT);
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
 }
 
 std::string ReservationDTO::toString() const {
-    return std::string("ReservationDTO{reservationID= " + reservationID +
-        ", userID=" + userID +
-        ", computerroomID=" + computerroomID +
-        ", date=" + date +
-        ", reservationTime=" + std::to_string(reservationTime) +
-        ", status=" + status +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        "}");
+    try {
+        if (reservationID.empty() || userID.empty() || computerroomID.empty() || date.empty() || status.empty() || createTime.empty() || updateTime.empty()) {
+            throw std::invalid_argument(OPERATE_ABNORMALLY);
+        }
+        else {
+            return std::string("ReservationDTO{reservationID= " + reservationID +
+                ", userID=" + userID +
+                ", computerroomID=" + computerroomID +
+                ", date=" + date +
+                ", reservationTime=" + std::to_string(reservationTime) +
+                ", status=" + status +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                "}");
+        }
+    }
+    catch (std::invalid_argument& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
+    return std::string(TO_STRING_FALIED);
 }

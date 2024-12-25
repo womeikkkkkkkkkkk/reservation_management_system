@@ -1,8 +1,7 @@
 #pragma once
 #include "EncryptionUtils.h"
 
-class EncryptionManager
-{
+class EncryptionManager {
 private:
     std::string key;
 public:

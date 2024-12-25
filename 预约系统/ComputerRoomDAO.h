@@ -3,18 +3,18 @@
 #define COMPUTERROOMDAO_H
 #include "ComputerRoomDTO.h"
 #include <vector>
-class ComputerRoomDAO
-{
+class ComputerRoomDAO {
 public:
-    // 获取指定ID的机房
-    ComputerRoomDTO GetComputerRoomById(int id);
-    // 获取所有机房信息
-    std::vector<ComputerRoomDTO> GetAllComputerRooms();
-    // 插入机房数据
-    void InsertComputerRoom(const ComputerRoomDTO& cr);
-    // 更新机房信息
-    void UpdateComputerRoom(int id, const ComputerRoomDTO& updatedCR);
+    //DAO层提供CRUD接口
+    // 添加机房
+    void addComputerRoom(const ComputerRoomDTO& computerRoom);
     // 删除机房
-    void DeleteComputerRoom(int id);
+    void deleteComputerRoom(const std::string& computerRoomID);
+    // 更新机房
+    void updateComputerRoom(const ComputerRoomDTO& computerRoom);
+    // 获取所有机房
+    std::vector<ComputerRoomDTO> getAllComputerRooms();
+    // 获取机房
+    ComputerRoomDTO getComputerRoom(const std::string& computerRoomID);
 };
 #endif

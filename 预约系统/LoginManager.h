@@ -1,5 +1,4 @@
 #pragma once
 
-class LoginManager
-{
+class LoginManager {
 };

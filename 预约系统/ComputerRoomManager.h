@@ -4,8 +4,7 @@
 #include "ComputerRoomDAO.h"
 #include "Identity.h"
 
-class ComputerRoomManager
-{
+class ComputerRoomManager {
 private:
     ComputerRoomDAO crDAO;
 public:

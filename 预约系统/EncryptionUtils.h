@@ -14,8 +14,7 @@
 #pragma comment( lib, "cryptlib.lib" )
 using namespace CryptoPP;
 
-class EncryotionUtils
-{
+class EncryotionUtils {
 private:
     static std::string PadData(const std::string& data, size_t blockSize); // PKCS7Ìî³äº¯Êý
     static std::string UnpadData(const std::string& paddedData, size_t blockSize);// È¥³ýPKCS7Ìî³ä
