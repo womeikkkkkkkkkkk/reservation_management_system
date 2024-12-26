@@ -193,19 +193,19 @@ std::string ReservationDTO::getUpdateTime() const {
     return std::string(this->updateTime);
 }
 
-void ReservationDTO::setReservationID(std::string& reservationID) {
+void ReservationDTO::setReservationID(const std::string& reservationID) {
     this->reservationID = reservationID;
 }
 
-void ReservationDTO::setUserID(std::string& userID) {
+void ReservationDTO::setUserID(const std::string& userID) {
     this->userID = userID;
 }
 
-void ReservationDTO::setComputerroomID(std::string& computerroomID) {
+void ReservationDTO::setComputerroomID(const std::string& computerroomID) {
     this->computerroomID = computerroomID;
 }
 
-void ReservationDTO::setDate(std::string& date) {
+void ReservationDTO::setDate(const std::string& date) {
     try {
         if (date.empty()) {
             throw std::invalid_argument(DATE_ERROR);
@@ -228,7 +228,7 @@ void ReservationDTO::setDate(std::string& date) {
         throw;
     }
 }
-void ReservationDTO::setReservationTime(int& reservationTime) {
+void ReservationDTO::setReservationTime(const int& reservationTime) {
     try {
         if (reservationID.empty()) {
             throw std::invalid_argument(TIME_ERROR);
@@ -252,7 +252,7 @@ void ReservationDTO::setReservationTime(int& reservationTime) {
     }
 }
 
-void ReservationDTO::setStatus(std::string& status) {
+void ReservationDTO::setStatus(const std::string& status) {
     try {
         if (status.empty()) {
             throw std::invalid_argument(STATUS_ERROR);
@@ -276,7 +276,7 @@ void ReservationDTO::setStatus(std::string& status) {
     }
 }
 
-void ReservationDTO::setCreateTime(std::string& createTime) {
+void ReservationDTO::setCreateTime(const std::string& createTime) {
     try {
         if (createTime.empty()) {
             throw std::invalid_argument(TIME_ERROR);
@@ -299,7 +299,7 @@ void ReservationDTO::setCreateTime(std::string& createTime) {
         throw;
     }
 }
-void ReservationDTO::setUpdateTime(std::string& updateTime) {
+void ReservationDTO::setUpdateTime(const std::string& updateTime) {
     try {
         if (updateTime.empty()) {
             throw std::invalid_argument(TIME_ERROR);

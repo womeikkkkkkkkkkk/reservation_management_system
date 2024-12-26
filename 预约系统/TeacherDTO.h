@@ -16,8 +16,8 @@ public:
     std::string getPassword() const;
     std::string getTeacherID() const;
 
-    void setTeacherName(std::string& teachername);
-    void setPassword(std::string& password);
-    void setTeacherID(std::string& teacherID);
+    void setTeacherName(const std::string& teachername);
+    void setPassword(const std::string& password);
+    void setTeacherID(const std::string& teacherID);
 };
 #endif

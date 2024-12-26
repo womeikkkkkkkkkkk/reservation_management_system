@@ -20,7 +20,7 @@ private:
     static const std::unordered_set<int> validTimes;//有效时段
     static const std::unordered_set<std::string> validStatus;//有效状态
 public:
-    ReservationDTO(const std::string& reservationID, const std::string& userID, const std::string& computerroomID, const std::string& date, const std::string& reservationTime, const std::string& status, const std::string& createTime, const std::string& updateTime) : reservationID(reservationID), userID(userID), computerroomID(computerroomID), date(date), reservationTime(reservationTime), status(status), createTime(createTime), updateTime(updateTime) {}
+    ReservationDTO(const std::string& reservationID, const std::string& userID, const std::string& computerroomID, const std::string& date, const int& reservationTime, const std::string& status, const std::string& createTime, const std::string& updateTime) : reservationID(reservationID), userID(userID), computerroomID(computerroomID), date(date), reservationTime(reservationTime), status(status), createTime(createTime), updateTime(updateTime) {}
     //拷贝构造函数
     ReservationDTO(const ReservationDTO& other) : reservationID(other.getReservationID()), userID(other.getUserID()), computerroomID(other.getComputerroomID()), date(other.getDate()), reservationTime(other.getReservationTime()), status(other.getStatus()), createTime(other.getCreateTime()), updateTime(other.getUpdateTime()) {}
 
@@ -33,14 +33,14 @@ public:
     std::string getCreateTime() const;
     std::string getUpdateTime() const;
 
-    void setReservationID(std::string& reservationID);
-    void setUserID(std::string& userID);
-    void setComputerroomID(std::string& computerroomID);
-    void setDate(std::string& date);
-    void setReservationTime(int& reservationTime);
-    void setStatus(std::string& status);
-    void setCreateTime(std::string& createTime);
-    void setUpdateTime(std::string& updateTime);
+    void setReservationID(const std::string& reservationID);
+    void setUserID(const std::string& userID);
+    void setComputerroomID(const std::string& computerroomID);
+    void setDate(const std::string& date);
+    void setReservationTime(const int& reservationTime);
+    void setStatus(const std::string& status);
+    void setCreateTime(const std::string& createTime);
+    void setUpdateTime(const std::string& updateTime);
 
     bool validDate() const;
     bool validTime() const;

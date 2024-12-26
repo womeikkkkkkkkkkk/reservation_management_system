@@ -12,14 +12,14 @@ std::string TeacherDTO::getTeacherID() const {
     return std::string(this->teacherID);
 }
 
-void TeacherDTO::setTeacherName(std::string& teachername) {
+void TeacherDTO::setTeacherName(const std::string& teachername) {
     this->teachername = teachername;
 }
 
-void TeacherDTO::setPassword(std::string& password) {
+void TeacherDTO::setPassword(const std::string& password) {
     this->password = password;
 }
 
-void TeacherDTO::setTeacherID(std::string& teacherID) {
+void TeacherDTO::setTeacherID(const std::string& teacherID) {
     this->teacherID = teacherID;
 }

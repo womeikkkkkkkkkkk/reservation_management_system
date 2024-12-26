@@ -8,7 +8,10 @@
 #include <mysql.h>
 
 class StudentDAO {
+private:
+    DatabaseManager& dbManager;
 public:
+    StudentDAO(DatabaseManager& dbMgr);
     //DAO层提供CRUD接口
     // 添加学生
     void addStudent(const StudentDTO& student);

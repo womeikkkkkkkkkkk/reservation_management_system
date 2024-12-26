@@ -125,7 +125,15 @@ const std::string RENMA_LOG_FILE_FALIED = "日志备份失败";
 const std::string LOG_DELETE_FALIED = "日志删除失败";
 const std::string LOG_OPEN_FALIED = "日志打开失败";
 
+const std::string MYSQL_SET_CONNECTION_TIMEOUT_FALIED = "设置超时退出时间失败";
 const std::string POTENTIAL_SQL_INJECTION_DETECTED = "检测到潜在的SQL注入攻击";
+const std::string MYSQL_INIT_FALIED = "初始化MYSQL失败";
+const std::string MYSQL_INIT_SUCCESS = "初始化MYSQL成功";
+const std::string MYSQL_LOGOUT_FALIED = "退出MYSQL失败";
+const std::string MYSQL_ADD_STUDENT_FALIED = "添加学生失败";
+const std::string MYSQL_ADD_TEACHER_FALIED = "添加教师失败";
+const std::string MYSQL_ADD_COMPUTER_FALIED = "添加机房失败";
+const std::string MYSQL_ADD_MANAGER_FALIED = "添加管理员失败";
 const std::string MYSQL_STMT_INIT_FALIED = "初始化MYSQL_STMT失败";
 const std::string MYSQL_STMT_PREPARE_FALIED = "准备MYSQL_STMT失败";
 const std::string MYSQL_STMT_PARAM_FALIED = "设置MYSQL_STMT参数失败";
@@ -136,6 +144,7 @@ const std::string MYSQL_BIND_PAEAMETERS_BIND_FALIED = "绑定参数失败：";
 const std::string MYSQL_EXECUTE_STATEMENT_FALIED = "执行语句失败：";
 const std::string MYSQL_GET_RESULT_METADATA_FALIED = "获取结果元数据失败：";
 const std::string MYSQL_STMT_BINT_RESULT_FALED = "绑定查询结果失败";
+const std::string MYSQL_INVALID_INPUTS = "存在非法字符";
 enum {
     // 0学生  1教师  2 管理员
     STUDENTID,

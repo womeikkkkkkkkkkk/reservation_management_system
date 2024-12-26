@@ -8,10 +8,10 @@ int ComputerRoomDTO::getMax() const {
     return this->MAXC;
 }
 
-void ComputerRoomDTO::setId(int& id) {
+void ComputerRoomDTO::setId(const int& id) {
     this->CRID = id;
 }
 
-void ComputerRoomDTO::setMax(int& max) {
+void ComputerRoomDTO::setMax(const int& max) {
     this->MAXC = max;
 }

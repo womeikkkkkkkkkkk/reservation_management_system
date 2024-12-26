@@ -1,5 +1,61 @@
 #include "DatabaseManager.h"
 
+void DatabaseManager::connect(const std::string& host, const std::string& user, const std::string& password, const std::string& dbname) {
+    try {
+        if (conn == nullptr) {
+            conn = mysql_init(nullptr);
+            if (conn == nullptr) {
+                throw std::runtime_error(MYSQL_INIT_FALIED);
+            }
+        }
+        ///超时设置
+        unsigned int timeout = 10;
+        if (mysql_options(conn, MYSQL_OPT_CONNECT_TIMEOUT, &timeout)) {
+            throw std::runtime_error(MYSQL_SET_CONNECTION_TIMEOUT_FALIED);
+        }
+        ///重连
+        int attempts = 0;
+        while (attempts < reconnectAttempts) {
+            if (mysql_real_connect(conn, host.c_str(), user.c_str(), password.c_str(), dbname.c_str(), 0, nullptr, 0)) {
+                isConnected = true;
+                std::cout << MYSQL_INIT_SUCCESS << std::endl;
+                return;
+            }
+            std::this_thread::sleep_for(std::chrono::milliseconds(reconnectDelayMs));
+            attempts++;
+        }
+        throw std::runtime_error(MYSQL_INIT_FALIED + std::to_string(attempts));
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
+}
+
+void DatabaseManager::logout(const std::string& username, const std::string& password) {
+    try {
+        if (conn != nullptr) {
+            mysql_close(conn);
+            conn = nullptr;
+            isConnected = false;
+            return;
+        }
+        throw std::runtime_error(MYSQL_LOGOUT_FALIED);
+    }
+    catch (std::exception& e) {
+        ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
+        throw;
+    }
+}
+
 void DatabaseManager::executeQuery(const std::string& query, const std::vector<MYSQL_BIND>& binds) {
     try {
         MYSQL_STMT* stmt = mysql_stmt_init(conn);
@@ -17,11 +73,16 @@ void DatabaseManager::executeQuery(const std::string& query, const std::vector<M
         }
         mysql_stmt_close(stmt);
     }
-    catch (const std::exception& e) {
+    catch (std::exception& e) {
         ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
         throw;
     }
 }
+
 void DatabaseManager::executeQueryWithResult(const std::string& query, const std::vector<MYSQL_BIND>& binds, MYSQL_RES*& result) {
     try {
         ///初始化查询
@@ -59,7 +120,7 @@ void DatabaseManager::executeQueryWithResult(const std::string& query, const std
         }
         ///绑定查询结果
         if (mysql_stmt_bind_result(stmt, resultBinds.data())) {
-            throw std::runtime_error(MYSQL_STMT_BINT_RESULT_FALED + std::string(mysql_error(conn));
+            throw std::runtime_error(MYSQL_STMT_BINT_RESULT_FALED + std::string(mysql_error(conn)));
         }
         ///获取结果
         while (mysql_stmt_fetch(stmt) == 0) {
@@ -69,13 +130,17 @@ void DatabaseManager::executeQueryWithResult(const std::string& query, const std
         }
         mysql_stmt_close(stmt);
     }
-    catch (const std::exception& e) {
+    catch (std::exception& e) {
         ExceptionLog::GetInstance()->LogException(e.what());
+        throw e;
+    }
+    catch (...) {
+        ExceptionLog::GetInstance()->LogException(UNKNOWN_EXCEPTION_OCCURRED);
         throw;
     }
 }
 
-bool DatabaseManager::isValidInputs(const std::string& input) const {
+bool DatabaseManager::isValidInputs(const std::string& input)const {
     return sqlProtection.isValidInput(input);
 }
 

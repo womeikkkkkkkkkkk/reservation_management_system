@@ -22,7 +22,7 @@
 #include "ManagerDAO.h"           // 管理员数据访问对象
 
 //公共工具
-#include "Log.h"                  // 日志工具
+#include "ExceptionLog.h"         // 日志工具
 #include "TimeUtils.h"            // 时间工具
 #include "CaptchaUtils.h"         // 验证码工具类
 #include "EncryptionUtils.h"      // 加密工具类

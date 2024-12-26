@@ -14,8 +14,8 @@ public:
     int getId() const;
     int getMax() const;
 
-    void setId(int& id);
-    void setMax(int& max);
+    void setId(const int& id);
+    void setMax(const int& max);
 
     // 用于打印机房信息
     friend std::ostream& operator<<(std::ostream& os, const ComputerRoomDTO& cr);

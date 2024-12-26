@@ -42,13 +42,7 @@
     <ClInclude Include="EncryptionUtils.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="Log.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="LoginManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LogManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="ManagerDAO.h">
@@ -143,13 +137,7 @@
     <ClCompile Include="EncryptionUtils.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Log.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="LoginManager.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LogManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ManagerDAO.cpp">
@@ -249,7 +237,14 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <None Include="项目结构.md" />
-    <None Include="开发日志.md" />
+    <None Include="待完成模块.md">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="开发日志.md">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="项目结构.md">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>
