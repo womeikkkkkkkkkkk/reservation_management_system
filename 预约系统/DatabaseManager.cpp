@@ -44,7 +44,7 @@ void DatabaseManager::executeQueryWithResult(const std::string& query, const std
         ///获取结果集
         result = mysql_stmt_result_metadata(stmt);
         if (!result) {
-            throw std::runtime_error(MYSQ_GET_RESULT_METADATA_FALIED + std::string(mysql_error(conn)));
+            throw std::runtime_error(MYSQL_GET_RESULT_METADATA_FALIED + std::string(mysql_error(conn)));
         }
 
         unsigned int numFields = mysql_num_fields(result);
@@ -59,7 +59,7 @@ void DatabaseManager::executeQueryWithResult(const std::string& query, const std
         }
         ///绑定查询结果
         if (mysql_stmt_bind_result(stmt, resultBinds.data())) {
-            throw std::runtime_error(+std::string(mysql_error(conn));
+            throw std::runtime_error(MYSQL_STMT_BINT_RESULT_FALED + std::string(mysql_error(conn));
         }
         ///获取结果
         while (mysql_stmt_fetch(stmt) == 0) {

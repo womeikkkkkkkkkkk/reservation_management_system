@@ -28,8 +28,7 @@
 #include "EncryptionUtils.h"      // 加密工具类
 using namespace std;
 
-int main()
-{
+int main() {
     while (1) {
         int select;
         std::cin >> select;
