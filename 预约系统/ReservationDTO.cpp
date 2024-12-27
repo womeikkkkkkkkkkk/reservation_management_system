@@ -1,14 +1,14 @@
 #include "ReservationDTO.h"
 
 const std::unordered_set<std::string> ReservationDTO::validDays = { "Monday","Tuesday","Wednesday","Thursday", " Friday" };
-const std::unordered_set<int> ReservationDTO::validTimes = { 1,2,3,4,5,6,7,8,9,10 };
+const std::unordered_set<std::string> ReservationDTO::validTimes = { "1","2","3","4","5","6","7","8","9","10" };
 const std::unordered_set<std::string> ReservationDTO::validStatus = { "valid","invalid" };
 
 ReservationDTO& ReservationDTO::operator=(const ReservationDTO& other) {
     if (this != &other) {
-        reservationID = other.getReservationID();
-        userID = other.getUserID();
-        computerroomID = other.getComputerroomID();
+        reservationid = other.getReservationID();
+        userid = other.getUserID();
+        computerroomid = other.getComputerroomID();
         date = other.getDate();
         reservationTime = other.getReservationTime();
         status = other.getStatus();
@@ -19,9 +19,9 @@ ReservationDTO& ReservationDTO::operator=(const ReservationDTO& other) {
 }
 
 bool ReservationDTO::operator==(const ReservationDTO& other) const {
-    return reservationID == other.getReservationID() &&
-        userID == other.getUserID() &&
-        computerroomID == other.getComputerroomID() &&
+    return reservationid == other.getReservationID() &&
+        userid == other.getUserID() &&
+        computerroomid == other.getComputerroomID() &&
         date == other.getDate() &&
         reservationTime == other.getReservationTime() &&
         status == other.getStatus() &&
@@ -34,24 +34,24 @@ bool ReservationDTO::operator!=(const ReservationDTO& other) const {
 }
 
 bool ReservationDTO::operator<(const ReservationDTO& other) const {
-    if (reservationID < other.getReservationID()) {
+    if (reservationid < other.getReservationID()) {
         return true;
     }
-    if (reservationID > other.getReservationID()) {
+    if (reservationid > other.getReservationID()) {
         return false;
     }
 
-    if (userID < other.getUserID()) {
+    if (userid < other.getUserID()) {
         return true;
     }
-    if (userID > other.getUserID()) {
+    if (userid > other.getUserID()) {
         return false;
     }
 
-    if (computerroomID < other.getComputerroomID()) {
+    if (computerroomid < other.getComputerroomID()) {
         return true;
     }
-    if (computerroomID > other.getComputerroomID()) {
+    if (computerroomid > other.getComputerroomID()) {
         return false;
     }
 
@@ -94,24 +94,24 @@ bool ReservationDTO::operator<(const ReservationDTO& other) const {
 }
 
 bool ReservationDTO::operator>(const ReservationDTO& other) const {
-    if (reservationID > other.getReservationID()) {
+    if (reservationid > other.getReservationID()) {
         return true;
     }
-    if (reservationID < other.getReservationID()) {
+    if (reservationid < other.getReservationID()) {
         return false;
     }
 
-    if (userID > other.getUserID()) {
+    if (userid > other.getUserID()) {
         return true;
     }
-    if (userID < other.getUserID()) {
+    if (userid < other.getUserID()) {
         return false;
     }
 
-    if (computerroomID > other.getComputerroomID()) {
+    if (computerroomid > other.getComputerroomID()) {
         return true;
     }
-    if (computerroomID < other.getComputerroomID()) {
+    if (computerroomid < other.getComputerroomID()) {
         return false;
     }
 
@@ -162,23 +162,23 @@ bool ReservationDTO::operator>=(const ReservationDTO& other) const {
 }
 
 std::string ReservationDTO::getReservationID() const {
-    return std::string(this->reservationID);
+    return std::string(this->reservationid);
 }
 
 std::string ReservationDTO::getUserID() const {
-    return std::string(this->userID);
+    return std::string(this->userid);
 }
 
 std::string ReservationDTO::getComputerroomID() const {
-    return std::string(this->computerroomID);
+    return std::string(this->computerroomid);
 }
 
 std::string ReservationDTO::getDate() const {
     return std::string(this->date);
 }
 
-int ReservationDTO::getReservationTime() const {
-    return int(this->reservationTime);
+std::string ReservationDTO::getReservationTime() const {
+    return std::string(this->reservationTime);
 }
 
 std::string ReservationDTO::getStatus() const {
@@ -194,15 +194,15 @@ std::string ReservationDTO::getUpdateTime() const {
 }
 
 void ReservationDTO::setReservationID(const std::string& reservationID) {
-    this->reservationID = reservationID;
+    this->reservationid = reservationID;
 }
 
 void ReservationDTO::setUserID(const std::string& userID) {
-    this->userID = userID;
+    this->userid = userID;
 }
 
 void ReservationDTO::setComputerroomID(const std::string& computerroomID) {
-    this->computerroomID = computerroomID;
+    this->computerroomid = computerroomID;
 }
 
 void ReservationDTO::setDate(const std::string& date) {
@@ -228,9 +228,9 @@ void ReservationDTO::setDate(const std::string& date) {
         throw;
     }
 }
-void ReservationDTO::setReservationTime(const int& reservationTime) {
+void ReservationDTO::setReservationTime(const std::string& reservationTime) {
     try {
-        if (reservationID.empty()) {
+        if (reservationid.empty()) {
             throw std::invalid_argument(TIME_ERROR);
         }
         this->reservationTime = reservationTime;
@@ -448,15 +448,15 @@ bool ReservationDTO::validUpdateTime() const {
 
 std::string ReservationDTO::toString() const {
     try {
-        if (reservationID.empty() || userID.empty() || computerroomID.empty() || date.empty() || status.empty() || createTime.empty() || updateTime.empty()) {
+        if (reservationid.empty() || userid.empty() || computerroomid.empty() || date.empty() || status.empty() || createTime.empty() || updateTime.empty()) {
             throw std::invalid_argument(OPERATE_ABNORMALLY);
         }
         else {
-            return std::string("ReservationDTO{reservationID= " + reservationID +
-                ", userID=" + userID +
-                ", computerroomID=" + computerroomID +
+            return std::string("ReservationDTO{reservationID= " + reservationid +
+                ", userID=" + userid +
+                ", computerroomID=" + computerroomid +
                 ", date=" + date +
-                ", reservationTime=" + std::to_string(reservationTime) +
+                ", reservationTime=" + reservationTime +
                 ", status=" + status +
                 ", createTime=" + createTime +
                 ", updateTime=" + updateTime +

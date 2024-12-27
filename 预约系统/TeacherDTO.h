@@ -7,17 +7,17 @@ class TeacherDTO {
 private:
     std::string teachername;
     std::string password;
-    std::string teacherID;
+    std::string teacherid;
 public:
+    TeacherDTO() {}
+    TeacherDTO(const std::string& teachername, const std::string& password, const std::string teacherid) : teachername(teachername), password(password), teacherid(teacherid) {}
 
-    TeacherDTO(const std::string& username, const std::string& password, const std::string teacherID) : teachername(username), password(password), teacherID(teacherID) {}
-
-    std::string getTeacherName() const;
-    std::string getPassword() const;
-    std::string getTeacherID() const;
+    const std::string& getTeacherName() const;
+    const std::string& getPassword() const;
+    const std::string& getTeacherID() const;
 
     void setTeacherName(const std::string& teachername);
     void setPassword(const std::string& password);
-    void setTeacherID(const std::string& teacherID);
+    void setTeacherID(const std::string& teacherid);
 };
 #endif

@@ -6,17 +6,17 @@ class ManagerDTO {
 private:
     std::string managername;
     std::string password;
-    std::string managerID;
+    std::string managerid;
 public:
 
-    ManagerDTO(const std::string& username, const std::string& password, const std::string& managerID) : managername(username), password(password), managerID(managerID) {}
+    ManagerDTO(const std::string& managername, const std::string& password, const std::string& managerid) : managername(managername), password(password), managerid(managerid) {}
 
-    std::string getManagerNmae() const;
-    std::string getPassword() const;
-    std::string geetManagerID() const;
+    const std::string& getManagerNmae() const;
+    const std::string& getPassword() const;
+    const std::string& geetManagerID() const;
 
     void setManagerName(const std::string& managername);
     void setPassword(const std::string& password);
-    void setManagerID(const std::string& managerID);
+    void setManagerID(const std::string& managerid);
 };
 #endif

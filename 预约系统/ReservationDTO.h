@@ -7,28 +7,29 @@
 
 class ReservationDTO {
 private:
-    std::string reservationID;//预约ID
-    std::string userID;//用户ID
-    std::string computerroomID;//机房ID
+    std::string reservationid;//预约ID
+    std::string userid;//用户ID
+    std::string computerroomid;//机房ID
     std::string date;//预约日期
-    int reservationTime;//预约时段
+    std::string reservationTime;//预约时段
     std::string status;//预约状态
     std::string createTime;//创建时间
     std::string updateTime;//更新时间
 
     static const std::unordered_set<std::string> validDays;//有效日期
-    static const std::unordered_set<int> validTimes;//有效时段
+    static const std::unordered_set<std::string> validTimes;//有效时段
     static const std::unordered_set<std::string> validStatus;//有效状态
 public:
-    ReservationDTO(const std::string& reservationID, const std::string& userID, const std::string& computerroomID, const std::string& date, const int& reservationTime, const std::string& status, const std::string& createTime, const std::string& updateTime) : reservationID(reservationID), userID(userID), computerroomID(computerroomID), date(date), reservationTime(reservationTime), status(status), createTime(createTime), updateTime(updateTime) {}
+    ReservationDTO() {}
+    ReservationDTO(const std::string& reservationid, const std::string& userid, const std::string& computerroomid, const std::string& date, const std::string& reservationTime, const std::string& status, const std::string& createTime, const std::string& updateTime) : reservationid(reservationid), userid(userid), computerroomid(computerroomid), date(date), reservationTime(reservationTime), status(status), createTime(createTime), updateTime(updateTime) {}
     //拷贝构造函数
-    ReservationDTO(const ReservationDTO& other) : reservationID(other.getReservationID()), userID(other.getUserID()), computerroomID(other.getComputerroomID()), date(other.getDate()), reservationTime(other.getReservationTime()), status(other.getStatus()), createTime(other.getCreateTime()), updateTime(other.getUpdateTime()) {}
+    ReservationDTO(const ReservationDTO& other) : reservationid(other.getReservationID()), userid(other.getUserID()), computerroomid(other.getComputerroomID()), date(other.getDate()), reservationTime(other.getReservationTime()), status(other.getStatus()), createTime(other.getCreateTime()), updateTime(other.getUpdateTime()) {}
 
     std::string getReservationID() const;
     std::string getUserID() const;
     std::string getComputerroomID() const;
     std::string getDate() const;
-    int getReservationTime() const;
+    std::string getReservationTime() const;
     std::string getStatus() const;
     std::string getCreateTime() const;
     std::string getUpdateTime() const;
@@ -37,7 +38,7 @@ public:
     void setUserID(const std::string& userID);
     void setComputerroomID(const std::string& computerroomID);
     void setDate(const std::string& date);
-    void setReservationTime(const int& reservationTime);
+    void setReservationTime(const std::string& reservationTime);
     void setStatus(const std::string& status);
     void setCreateTime(const std::string& createTime);
     void setUpdateTime(const std::string& updateTime);

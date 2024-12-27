@@ -1,10 +1,10 @@
 #include "ComputerRoomDTO.h"
 
-int ComputerRoomDTO::getId() const {
+const int& ComputerRoomDTO::getId() const {
     return this->CRID;
 }
 
-int ComputerRoomDTO::getMax() const {
+const int& ComputerRoomDTO::getMax() const {
     return this->MAXC;
 }
 

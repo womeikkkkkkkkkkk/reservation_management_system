@@ -11,8 +11,8 @@ private:
 public:
     ComputerRoomDTO(int id = 0, int max = 0) : CRID(id), MAXC(max) {}
 
-    int getId() const;
-    int getMax() const;
+    const int& getId() const;
+    const int& getMax() const;
 
     void setId(const int& id);
     void setMax(const int& max);

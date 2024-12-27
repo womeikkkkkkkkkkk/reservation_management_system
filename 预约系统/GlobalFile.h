@@ -117,7 +117,7 @@ const std::string DATE_CONFLICT = "日期冲突";
 const std::string LOGOUT_ERROR = "退出错误";
 const std::string LOGOUT_SUCCESS = "退出成功";
 const std::string LOGOUT_FALIED = "退出失败";
-
+///日志模块
 const std::string TO_STRING_ERROR = "转换字符串错误";
 const std::string TO_STRING_SUCCESS = "转换字符串成功";
 const std::string TO_STRING_FALIED = "转换字符串失败";
@@ -125,15 +125,38 @@ const std::string RENMA_LOG_FILE_FALIED = "日志备份失败";
 const std::string LOG_DELETE_FALIED = "日志删除失败";
 const std::string LOG_OPEN_FALIED = "日志打开失败";
 
+///CRUD
+const std::string MYSQL_ADD_STUDENT_FALIED = "添加学生失败";
+const std::string MYSQL_ADD_TEACHER_FALIED = "添加教师失败";
+const std::string MYSQL_ADD_COMPUTER_FALIED = "添加机房失败";
+const std::string MYSQL_ADD_MANAGER_FALIED = "添加管理员失败";
+const std::string MYSQL_ADD_RESERVATION_FALIED = "添加预约失败";
+const std::string MYSQL_DELETE_STUDENT_FAILED = "删除学生失败";
+const std::string MYSQL_DELETE_TEACHER_FAILED = "删除教师失败";
+const std::string MYSQL_DELETE_COMPUTER_FAILED = "删除机房失败";
+const std::string MYSQL_DELETE_MANAGER_FAILED = "删除管理员失败";
+const std::string MYSQL_DELETE_RESERVATION_FAILED = "删除预约失败";
+const std::string MYSQL_UPDATE_STUDENT_FAILED = "更新学生信息失败";
+const std::string MYSQL_UPDATE_TEACHER_FAILED = "更新教师信息失败";
+const std::string MYSQL_UPDATE_COMPUTER_FAILED = "更新机房信息失败";
+const std::string MYSQL_UPDATE_MANAGER_FAILED = "更新管理员信息失败";
+const std::string MYSQL_UPDATE_RESERVATION_FAILED = "更新预约信息失败";
+const std::string MYSQL_SELECT_STUDENT_ONE_FAILED = "获取单个学生信息失败";
+const std::string MYSQL_SELECT_TEACHER_ONE_FAILED = "获取单个教师信息失败";
+const std::string MYSQL_SELECT_COMPUTER_ONE_FAILED = "获取单个机房信息失败";
+const std::string MYSQL_SELECT_MANAGER_ONE_FAILED = "获取单个管理员信息失败";
+const std::string MYSQL_SELECT_RESERVATION_ONE_FAILED = "获取单个预约信息失败";
+const std::string MYSQL_SELECT_STUDENT_ALL_FAILED = "获取所有学生信息失败";
+const std::string MYSQL_SELECT_TEACHER_ALL_FAILED = "获取所有教师信息失败";
+const std::string MYSQL_SELECT_COMPUTER_ALL_FAILED = "获取所有机房信息失败";
+const std::string MYSQL_SELECT_MANAGER_ALL_FAILED = "获取所有管理员信息失败";
+const std::string MYSQL_SELECT_RESERVATION_ALL_FAILED = "获取所有预约信息失败";
+///MYSQL初始化
 const std::string MYSQL_SET_CONNECTION_TIMEOUT_FALIED = "设置超时退出时间失败";
 const std::string POTENTIAL_SQL_INJECTION_DETECTED = "检测到潜在的SQL注入攻击";
 const std::string MYSQL_INIT_FALIED = "初始化MYSQL失败";
 const std::string MYSQL_INIT_SUCCESS = "初始化MYSQL成功";
 const std::string MYSQL_LOGOUT_FALIED = "退出MYSQL失败";
-const std::string MYSQL_ADD_STUDENT_FALIED = "添加学生失败";
-const std::string MYSQL_ADD_TEACHER_FALIED = "添加教师失败";
-const std::string MYSQL_ADD_COMPUTER_FALIED = "添加机房失败";
-const std::string MYSQL_ADD_MANAGER_FALIED = "添加管理员失败";
 const std::string MYSQL_STMT_INIT_FALIED = "初始化MYSQL_STMT失败";
 const std::string MYSQL_STMT_PREPARE_FALIED = "准备MYSQL_STMT失败";
 const std::string MYSQL_STMT_PARAM_FALIED = "设置MYSQL_STMT参数失败";
@@ -145,6 +168,37 @@ const std::string MYSQL_EXECUTE_STATEMENT_FALIED = "执行语句失败：";
 const std::string MYSQL_GET_RESULT_METADATA_FALIED = "获取结果元数据失败：";
 const std::string MYSQL_STMT_BINT_RESULT_FALED = "绑定查询结果失败";
 const std::string MYSQL_INVALID_INPUTS = "存在非法字符";
+///查询语句
+const std::string MYSQL_INSERT_STUDENT = "INSERT INTO students (studentid, studentname, password) VALUES (?, ?, ?)";
+const std::string MYSQL_DELETE_STUDENT = "DELETE FROM students WHERE studentid = ?";
+const std::string MYSQL_UPDATE_STUDENT = "UPDATE students SET studentname = ?, password = ? WHERE studentid = ?";
+const std::string MYSQL_SELECT_STUDENT_ONE = "SELECT studentid, studentname, password FROM students WHERE studentid = ?";
+const std::string MYSQL_SELECT_STUDENT_TWICE = "SELECT studentid, studentname, password FROM students";
+
+const std::string MYSQL_INSERT_TEACHER = "INSERT INTO teachers (teacherid, teachername, password) VALUES (?, ?, ?)";
+const std::string MYSQL_DELETE_TEACHER = "DELETE FROM teachers WHERE teacherid = ?";
+const std::string MYSQL_UPDATE_TEACHER = "UPDATE teachers SET teachername = ?, password = ?, studentid = ?";
+const std::string MYSQL_SELECT_TEACHER_ONE = "SELECT teacherid, teachername, password FROM teachers WHERE teacherid = ?";
+const std::string MYSQL_SELECT_TEACHER_TWICE = "SELECT teacherid, teachername, password FROM teachers";
+
+const std::string MYSQL_INSERT_MANAGER = "INSERT INTO managers (managerid, managername, password) VALUES (?,?,?)";
+const std::string MYSQL_DELETE_MANAGER = "DELETE FROM managers WHERE managerid =?";
+const std::string MYSQL_UPDATE_MANAGER = "UPDATE managers SET managername =?, password =? WHERE managerid =?";
+const std::string MYSQL_SELECT_MANAGER_ONE = "SELECT managerid, managername, password FROM managers WHERE managerid =?";
+const std::string MYSQL_SELECT_MANAGER_TWICE = "SELECT managerid, managername, password FROM managers";
+
+const std::string MYSQL_INSERT_RESERVATION = "INSERT INTO reservations (reservationid, userid, computerroomid, date, reservationTime,status, createTime, updateTime) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+const std::string MYSQL_DELETE_RESERVATION = "DELETE FROM reservations WHRER reservationid = ?";
+const std::string MYSQL_UPDATE_RESERVATION = "UPFATE reservations SET reservationid = ?, userid = ?, computerroomid = ?, date = ?, reservationTime = ?, status = ?, createTime = ?, updateTime = ?";
+const std::string MYSQL_SELECT_RESERVATION_ONE = "SELECT reservationid, userid, computerroomid, date, reservationTime,status, createTime, updateTime FROM reservations WHERE reservationid = ?";
+const std::string MYSQL_SELECT_RESERVATION_TWICE = "SELECT reservationid, userid, computerroomid, date, reservationTime,status, createTime, updateTime FROM reservations";
+
+const std::string MYSQL_INSERT_COMPUTERROOM = "INSERT INTO computer_rooms (crid, maxc) VALUES (?,?);";
+const std::string MYSQL_DELETE_COMPUTERROOM = "DELETE FROM computer_rooms WHERE crid =?;";
+const std::string MYSQL_UPDATE_COMPUTERROOM = "UPDATE computer_rooms SET maxc =? WHERE crid =?;";
+const std::string MYSQL_SELECT_COMPUTERROOM_ONE = "SELECT crid, maxc FROM computer_rooms WHERE crid =?;";
+const std::string MYSQL_SELECT_COMPUTERROOM_TWICE = "SELECT crid, maxc FROM computer_rooms";
+
 enum {
     // 0学生  1教师  2 管理员
     STUDENTID,
