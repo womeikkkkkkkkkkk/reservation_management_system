@@ -1,17 +1,17 @@
 #include "ComputerRoomDTO.h"
 
-const int& ComputerRoomDTO::getId() const {
-    return this->CRID;
+const std::string& ComputerRoomDTO::getId() const {
+    return this->computerroomid;
 }
 
-const int& ComputerRoomDTO::getMax() const {
-    return this->MAXC;
+const std::string& ComputerRoomDTO::getMax() const {
+    return this->maxcapacity;
 }
 
-void ComputerRoomDTO::setId(const int& id) {
-    this->CRID = id;
+void ComputerRoomDTO::setId(const std::string& id) {
+    this->computerroomid = id;
 }
 
-void ComputerRoomDTO::setMax(const int& max) {
-    this->MAXC = max;
+void ComputerRoomDTO::setMax(const std::string& max) {
+    this->maxcapacity = max;
 }
