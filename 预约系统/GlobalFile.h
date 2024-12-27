@@ -11,7 +11,7 @@
 #define ORDER_FILE "Order.txt"//预约表
 #define EXCEPTIONLOG "Exception.log"//日志
 #define KEY "Key.txt"//密钥文件
-#define KERNE132_DLL"kernel32.dll"//win32dll
+#define KERNE132_DLL "kernel32.dll" //win32dll
 #define WINDOWS_TMP "C:\\Windows\\Temp"
 #define WINDOWS_SYSTEM32 "C:\\Windows\\System32"
 #define WINDOWS_SYSWOW64 "C:\\Windows\\SysWOW64"

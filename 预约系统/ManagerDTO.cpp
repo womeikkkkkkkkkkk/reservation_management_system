@@ -1,15 +1,15 @@
 #include "ManagerDTO.h"
 
 const std::string& ManagerDTO::getManagerNmae() const {
-    return std::string(this->managername);
+    return this->managername;
 }
 
 const std::string& ManagerDTO::getPassword() const {
-    return std::string(this->password);
+    return this->password;
 }
 
 const std::string& ManagerDTO::getManagerID() const {
-    return std::string(this->managerid);
+    return this->managerid;
 }
 
 void ManagerDTO::setManagerName(const std::string& managername) {

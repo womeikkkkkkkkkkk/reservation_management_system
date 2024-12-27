@@ -1,15 +1,15 @@
 #include "TeacherDTO.h"
 
 const std::string& TeacherDTO::getTeacherName() const {
-    return std::string(this->teachername);
+    return this->teachername;
 }
 
 const std::string& TeacherDTO::getPassword() const {
-    return std::string(this->password);
+    return this->password;
 }
 
 const std::string& TeacherDTO::getTeacherID() const {
-    return std::string(this->teacherid);
+    return this->teacherid;
 }
 
 void TeacherDTO::setTeacherName(const std::string& teachername) {
