@@ -1,13 +1,14 @@
 #pragma once
+#ifndef VERIFICATIONCODEMANAGER_H
+#define VERIFICATIONCODEMANAGER_H
 #include <opencv2/opencv.hpp>
 #include <string>
 #include <Windows.h>
 #include "CaptchaUtils.h"
 #include "TimeUtils.h"
 #include "ExceptionLog.h"
-
 using namespace cv;
-
+///提供验证码API
 class VerificationCodeManager {
 private:
     std::string captcha;  // 验证码
@@ -32,3 +33,4 @@ public:
     // 显示验证码并返回验证码字符串
     std::string ShowVerificationCode();
 };
+#endif

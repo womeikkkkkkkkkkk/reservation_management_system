@@ -2,6 +2,7 @@
 #ifndef MANAGERDTO_H
 #define MANAGERDTO_H
 #include <string>
+
 class ManagerDTO {
 private:
     std::string managername;

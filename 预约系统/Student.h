@@ -22,5 +22,4 @@ public:
     // 获取学生ID
     std::string getStudentID() const;
 };
-
 #endif

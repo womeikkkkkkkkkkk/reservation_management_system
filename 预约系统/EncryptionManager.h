@@ -1,4 +1,6 @@
 #pragma once
+#ifndef ENCRYPTIONMANAGER_H
+#define ENCRYPTIONMANAGER_H
 #include "EncryptionUtils.h"
 
 class EncryptionManager {
@@ -13,3 +15,4 @@ public:
     std::string EncryptData(const std::string& data); // 加密数据
     std::string DecryptData(const std::string& encryptedData); // 解密数据
 };
+#endif

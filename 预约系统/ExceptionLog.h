@@ -14,7 +14,6 @@
 #include <iomanip>
 #include <thread>
 #include <exception>
-
 namespace fs = std::filesystem;
 
 class ExceptionLog {
