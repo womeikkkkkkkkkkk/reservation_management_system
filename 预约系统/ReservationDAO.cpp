@@ -11,7 +11,7 @@ void ReservationDAO::addReservation(const ReservationDTO& reservation) {
         std::string createtime = reservation.getCreateTime();
         std::string updatetime = reservation.getUpdateTime();
 
-        if (!dbManager.isValidInputs(reservationid) || !dbManager.isValidInputs(userid) || !dbManager.isValidInputs(computerroomid) || !dbManager.isValidInputs(date) || !dbManager.isValidInputs(reservationTime) || !dbManager.isValidInputs(status) || !dbManager.isValidInputs(createTime) || !dbManager.isValidInputs(updateTime)) {
+        if (!dbManager.isValidInputs(reservationid) || !dbManager.isValidInputs(userid) || !dbManager.isValidInputs(computerroomid) || !dbManager.isValidInputs(date) || !dbManager.isValidInputs(reservationtime) || !dbManager.isValidInputs(status) || !dbManager.isValidInputs(createtime) || !dbManager.isValidInputs(updatetime)) {
             throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
@@ -102,7 +102,7 @@ void ReservationDAO::updateReservation(const ReservationDTO& reservation) {
         std::string createtime = reservation.getCreateTime();
         std::string updatetime = reservation.getUpdateTime();
 
-        if (!dbManager.isValidInputs(reservationid) || !dbManager.isValidInputs(userid) || !dbManager.isValidInputs(computerroomid) || !dbManager.isValidInputs(date) || !dbManager.isValidInputs(reservationTime) || !dbManager.isValidInputs(status) || !dbManager.isValidInputs(createTime) || !dbManager.isValidInputs(updateTime)) {
+        if (!dbManager.isValidInputs(reservationid) || !dbManager.isValidInputs(userid) || !dbManager.isValidInputs(computerroomid) || !dbManager.isValidInputs(date) || !dbManager.isValidInputs(reservationtime) || !dbManager.isValidInputs(status) || !dbManager.isValidInputs(createtime) || !dbManager.isValidInputs(updatetime)) {
             throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
@@ -201,29 +201,29 @@ ReservationDTO ReservationDAO::getReservation(const std::string& reservationid) 
         }
         else {
             std::string query = MYSQL_SELECT_RESERVATION_ONE;
+            MYSQL_RES* result = nullptr;
             ///绑定参数
             std::vector<MYSQL_BIND> binds(1);
             binds[0].buffer_type = MYSQL_TYPE_STRING;
             binds[0].buffer = (void*)reservationid.c_str();
             binds[0].buffer_length = reservationid.length();
-            MYSQL_RES* result = nullptr;
             ///获取结果集
             dbManager.executeQueryWithResult(query, binds, result);
-            ReservationDTO reservation;
+            ReservationDTO reservations;
             MYSQL_ROW row = nullptr;
             ///结果集转换为DTO
             if ((row = mysql_fetch_row(result))) {
-                reservation.setReservationID(row[0] ? std::string(row[0]) : "");
-                reservation.setUserID(row[1] ? std::string(row[1]) : "");
-                reservation.setComputerroomID(row[2] ? std::string(row[2]) : "");
-                reservation.setDate(row[3] ? std::string(row[3]) : "");
-                reservation.setReservationTime(row[4] ? std::string(row[4]) : "");
-                reservation.setStatus(row[5] ? std::string(row[5]) : "");
-                reservation.setCreateTime(row[6] ? std::string(row[6]) : "");
-                reservation.setUpdateTime(row[7] ? std::string(row[7]) : "");
+                reservations.setReservationID(row[0] ? std::string(row[0]) : "");
+                reservations.setUserID(row[1] ? std::string(row[1]) : "");
+                reservations.setComputerroomID(row[2] ? std::string(row[2]) : "");
+                reservations.setDate(row[3] ? std::string(row[3]) : "");
+                reservations.setReservationTime(row[4] ? std::string(row[4]) : "");
+                reservations.setStatus(row[5] ? std::string(row[5]) : "");
+                reservations.setCreateTime(row[6] ? std::string(row[6]) : "");
+                reservations.setUpdateTime(row[7] ? std::string(row[7]) : "");
             }
             mysql_free_result(result);
-            return reservation;
+            return reservations;
         }
     }
     catch (std::exception& e) {

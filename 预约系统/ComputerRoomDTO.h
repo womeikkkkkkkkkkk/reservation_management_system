@@ -5,17 +5,18 @@
 
 class ComputerRoomDTO {
 private:
-    int CRID;  // 机房编号
-    int MAXC;  // 最大容量
+    std::string computerroomid;  // 机房编号
+    std::string maxcapacity;  // 最大容量
 
 public:
-    ComputerRoomDTO(int id = 0, int max = 0) : CRID(id), MAXC(max) {}
+    ComputerRoomDTO() {}
+    ComputerRoomDTO(const std::string& id, const  std::string& max) : computerroomid(id), maxcapacity(max) {}
 
-    const int& getId() const;
-    const int& getMax() const;
+    const std::string& getId() const;
+    const std::string& getMax() const;
 
-    void setId(const int& id);
-    void setMax(const int& max);
+    void setId(const std::string& id);
+    void setMax(const std::string& max);
 
     // 用于打印机房信息
     friend std::ostream& operator<<(std::ostream& os, const ComputerRoomDTO& cr);
