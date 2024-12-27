@@ -3,17 +3,18 @@
 #define COMPUTERROOMMANAGER_H
 #include "ComputerRoomDAO.h"
 #include "Identity.h"
-
+#include <exception>
+///提供机房管理API接口
 class ComputerRoomManager {
 private:
-    ComputerRoomDAO crDAO;
+    ComputerRoomDAO computerroomDAO;
 public:
-    ComputerRoomManager() {}
-    bool isManager(const Identity& user);
-    void AddComputerRoom(const Identity& user);
-    void ShowComputerRoom();
-    void GetAllComputerRoom();
-    void UpdateComputerRoom(const Identity& user);
-    void DeleteComputerRoom(const Identity& user);
+    ComputerRoomManager(DatabaseManager& dbManager) : computerroomDAO(dbManager) {}
+
+    void addComputerRoom(const ComputerRoomDTO& computerRoom);
+    void deleteComputerRoom(const std::string& computerroomid);
+    void updateComputerRoom(const ComputerRoomDTO& computerRoom);
+    std::vector<ComputerRoomDTO> getAllComputerRooms();
+    ComputerRoomDTO getComputerRoom(const std::string& computerroomid);
 };
 #endif
