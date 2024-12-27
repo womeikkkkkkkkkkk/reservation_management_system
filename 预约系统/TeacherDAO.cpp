@@ -42,7 +42,7 @@ void TeacherDAO::addTeacher(const TeacherDTO& teacher) {
 void TeacherDAO::deleteTeacher(const std::string& teacherid) {
     try {
         if (!dbManager.isValidInputs(teacherid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_DELETE_TEACHER;
@@ -73,7 +73,7 @@ void TeacherDAO::updateTeacher(const TeacherDTO& teacher) {
         std::string teachername = teacher.getTeacherName();
         std::string password = teacher.getPassword();
 
-        if (!dbManager.isValidInputs(teachername) || dbManager.isValidInputs(password) || dbManager.isValidInputs(teacherid)) {
+        if (!dbManager.isValidInputs(teachername) || !dbManager.isValidInputs(password) || !dbManager.isValidInputs(teacherid)) {
             throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
@@ -144,7 +144,7 @@ std::vector<TeacherDTO> TeacherDAO::getAllTeachers() {
 TeacherDTO TeacherDAO::getTeacher(const std::string& teacherid) {
     try {
         if (!dbManager.isValidInputs(teacherid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_SELECT_TEACHER_ONE;

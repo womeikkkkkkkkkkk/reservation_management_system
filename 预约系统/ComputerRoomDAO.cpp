@@ -39,7 +39,7 @@ void ComputerRoomDAO::addComputerRoom(const ComputerRoomDTO& computerRoom) {
 void ComputerRoomDAO::deleteComputerRoom(const std::string& computerroomid) {
     try {
         if (!dbManager.isValidInputs(computerroomid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_DELETE_RESERVATION;
@@ -131,7 +131,7 @@ std::vector<ComputerRoomDTO> ComputerRoomDAO::getAllComputerRooms() {
 ComputerRoomDTO ComputerRoomDAO::getComputerRoom(const std::string& computerroomid) {
     try {
         if (!dbManager.isValidInputs(computerroomid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_SELECT_COMPUTERROOM_TWICE;

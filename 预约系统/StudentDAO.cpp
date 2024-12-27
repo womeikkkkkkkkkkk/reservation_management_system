@@ -42,7 +42,7 @@ void StudentDAO::addStudent(const StudentDTO& student) {
 void StudentDAO::deleteStudent(const std::string& studentid) {
     try {
         if (!dbManager.isValidInputs(studentid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_DELETE_STUDENT;
@@ -73,8 +73,8 @@ void StudentDAO::updateStudent(const StudentDTO& student) {
         std::string studentname = student.getStudentName();
         std::string password = student.getPassword();
 
-        if (!dbManager.isValidInputs(studentname) || dbManager.isValidInputs(password) || dbManager.isValidInputs(studentid)) {
-            throw std::runtime_error(MYSQL_INVALID_INPUTS);
+        if (!dbManager.isValidInputs(studentname) || !dbManager.isValidInputs(password) || !dbManager.isValidInputs(studentid)) {
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_UPDATE_STUDENT;
@@ -143,7 +143,7 @@ std::vector<StudentDTO> StudentDAO::getAllStudents() {
 StudentDTO StudentDAO::getStudent(const std::string& studentid) {
     try {
         if (!dbManager.isValidInputs(studentid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_SELECT_STUDENT_ONE;

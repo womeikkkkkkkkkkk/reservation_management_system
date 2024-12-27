@@ -8,7 +8,7 @@ const std::string& ManagerDTO::getPassword() const {
     return std::string(this->password);
 }
 
-const std::string& ManagerDTO::geetManagerID() const {
+const std::string& ManagerDTO::getManagerID() const {
     return std::string(this->managerid);
 }
 

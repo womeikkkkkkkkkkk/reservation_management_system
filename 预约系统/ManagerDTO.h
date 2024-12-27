@@ -8,12 +8,12 @@ private:
     std::string password;
     std::string managerid;
 public:
-
+    ManagerDTO() {}
     ManagerDTO(const std::string& managername, const std::string& password, const std::string& managerid) : managername(managername), password(password), managerid(managerid) {}
 
     const std::string& getManagerNmae() const;
     const std::string& getPassword() const;
-    const std::string& geetManagerID() const;
+    const std::string& getManagerID() const;
 
     void setManagerName(const std::string& managername);
     void setPassword(const std::string& password);

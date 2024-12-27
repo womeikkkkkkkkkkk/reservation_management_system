@@ -11,6 +11,14 @@
 #define ORDER_FILE "Order.txt"//预约表
 #define EXCEPTIONLOG "Exception.log"//日志
 #define KEY "Key.txt"//密钥文件
+#define KERNE132_DLL"kernel32.dll"//win32dll
+#define WINDOWS_TMP "C:\\Windows\\Temp"
+#define WINDOWS_SYSTEM32 "C:\\Windows\\System32"
+#define WINDOWS_SYSWOW64 "C:\\Windows\\SysWOW64"
+#define TEMP "%TEMP%"
+#define APPDATA "%APPDATA%"
+#define USERPROFILE "%USERPROFILE%"
+#define PROGRAMDATA "C:\\ProgramData"
 
 const int  NULLID = -1;//初始化ID
 const int NULLCONTAINER = -1;//初始化容量
@@ -125,6 +133,7 @@ const std::string RENMA_LOG_FILE_FALIED = "日志备份失败";
 const std::string LOG_DELETE_FALIED = "日志删除失败";
 const std::string LOG_OPEN_FALIED = "日志打开失败";
 
+///MYSQL模块
 ///CRUD
 const std::string MYSQL_ADD_STUDENT_FALIED = "添加学生失败";
 const std::string MYSQL_ADD_TEACHER_FALIED = "添加教师失败";
@@ -198,6 +207,22 @@ const std::string MYSQL_DELETE_COMPUTERROOM = "DELETE FROM computer_rooms WHERE 
 const std::string MYSQL_UPDATE_COMPUTERROOM = "UPDATE computer_rooms SET maxc =? WHERE crid =?;";
 const std::string MYSQL_SELECT_COMPUTERROOM_ONE = "SELECT crid, maxc FROM computer_rooms WHERE crid =?;";
 const std::string MYSQL_SELECT_COMPUTERROOM_TWICE = "SELECT crid, maxc FROM computer_rooms";
+
+///DLL模块
+const std::string DLL_PROTECTION_EXECUTION = "DLL防护开启成功";
+const std::string ILLEGAL_MEMORY = "检测到非法的内存修改";
+const std::string API_LOADLIBRARYA_JACKING = "检测到API_LoadLibraryA劫持";
+const std::string API_CREATEREMOTETHREAD_JACKING = "检测到API_CreateRemoteThread劫持";
+const std::string API_CREATEPROCESS_JACKING = "检测到API_CreateProcessW劫持";
+const std::string ILLEGAL_DLL = "检测到可疑DLL注入";
+const std::string ILLEGAL_THREAD = "检测到非法的远程线程创建";
+const std::string ILLEGAL_PROCESS = "检测到非法的进程创建";
+const std::string KERNE_132_DLL_NONE = "kerne132.dll丢失";
+const std::string LOADLIBRARYA_ADDRESS_ERROR = "LoadLibraryA初始地址获取失败";
+const std::string CREATEREMOTETHREAD_ADDRESS_ERROR = "CreateRemoteThread初始地址获取失败";
+const std::string CREATEPROCESSW_ADDRESS_ERROR = "CreateProcessW初始地址获取失败";
+const std::string MEMORY_ERROR = "检测到内存异常";
+const std::string SUSPICIOUS_DLL = "存在可疑的DLL： ";
 
 enum {
     // 0学生  1教师  2 管理员

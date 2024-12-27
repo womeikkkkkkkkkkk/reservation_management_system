@@ -115,7 +115,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalOptions>cryptlib.lib %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>opencv_world4100d.lib;libmysql.lib;cryptlib.lib;glew32d.lib;glew32sd.lib;glfw3.lib;WinTrust.Lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_world4100d.lib;libmysql.lib;cryptlib.lib;glew32d.lib;glew32sd.lib;glfw3.lib;detours.lib;syelog.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>..\..\..\lib;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64;..\..\..\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -137,8 +137,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\lib;..\..\..\lib\Release</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opencv_world4100.lib;libmysql.lib;cryptlib.lib;glew32.lib;glew32s.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\..\lib;..\..\..\lib\Release;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.22621.0\um\x64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_world4100.lib;libmysql.lib;cryptlib.lib;glew32.lib;glew32s.lib;glfw3.lib;detours.lib;syelog.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -157,7 +157,6 @@
     <ClInclude Include="ManagerDAO.h" />
     <ClInclude Include="ManagerDTO.h" />
     <ClInclude Include="ManagerMenu.h" />
-    <ClInclude Include="MessageManager.h" />
     <ClInclude Include="RegexValidator.h" />
     <ClInclude Include="ReservationDAO.h" />
     <ClInclude Include="ReservationDTO.h" />
@@ -190,7 +189,6 @@
     <ClCompile Include="ManagerDAO.cpp" />
     <ClCompile Include="ManagerDTO.cpp" />
     <ClCompile Include="ManagerMenu.cpp" />
-    <ClCompile Include="MessageManager.cpp" />
     <ClCompile Include="RegexValidator.cpp" />
     <ClCompile Include="ReservationDAO.cpp" />
     <ClCompile Include="ReservationDTO.cpp" />

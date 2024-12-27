@@ -67,7 +67,7 @@ void ReservationDAO::addReservation(const ReservationDTO& reservation) {
 void ReservationDAO::deleteReservation(const std::string& reservationid) {
     try {
         if (!dbManager.isValidInputs(reservationid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_DELETE_RESERVATION;
@@ -197,7 +197,7 @@ std::vector<ReservationDTO> ReservationDAO::getAllReservations() {
 ReservationDTO ReservationDAO::getReservation(const std::string& reservationid) {
     try {
         if (!dbManager.isValidInputs(reservationid)) {
-            throw std::runtime_error(ID_NO_EXIST);
+            throw std::runtime_error(POTENTIAL_SQL_INJECTION_DETECTED);
         }
         else {
             std::string query = MYSQL_SELECT_RESERVATION_ONE;

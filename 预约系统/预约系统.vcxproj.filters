@@ -54,9 +54,6 @@
     <ClInclude Include="ManagerMenu.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="MessageManager.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="ReservationDAO.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -147,9 +144,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ManagerMenu.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MessageManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ReservationDAO.cpp">
