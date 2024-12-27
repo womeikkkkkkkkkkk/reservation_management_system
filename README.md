@@ -10,6 +10,9 @@
                   OpenGL库  
                   GLEW库-2.1.0    
                   GLFW库-3.4  
-                  ImGUI库 
+                  ImGUI库
+                  
+DLL防护库：  detours库              
+
 数据库：MySQL-8.4.0
 
