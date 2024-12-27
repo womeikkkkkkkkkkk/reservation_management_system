@@ -1,4 +1,6 @@
 #pragma once
+#ifndef TIMEUTILS_H
+#define TIMEUTILS_H
 #include <ctime>
 #include <string>
 #include <sstream>
@@ -12,3 +14,4 @@ public:
     static std::string GetCurrentTimes(std::string s);
     static bool timeCmp(const std::string& timeStr1, const std::string& timeStr2);//比较时间差是否大于三分钟
 };
+#endif

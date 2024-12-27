@@ -1,5 +1,6 @@
 #pragma once
-
-class TeacherMenu
-{
+#ifndef TEACHERMENU_H
+#define TEACHERMENU_H
+class TeacherMenu {
 };
+#endif

@@ -1,7 +1,8 @@
 #pragma once
+#ifndef CAPTCHAUTILS_H
+#define CAPTCHAUTILS_H
 #include <opencv2/opencv.hpp>
 #include <string>
-
 using namespace cv;
 
 class CaptchaUtils {
@@ -18,3 +19,4 @@ public:
     // ªÊ÷∆∏…»≈µ„
     static void drawRandomDots(Mat& img);
 };
+#endif

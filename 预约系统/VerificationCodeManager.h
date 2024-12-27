@@ -1,4 +1,6 @@
 #pragma once
+#ifndef VERIFICATIONCODEMANAGER_H
+#define VERIFICATIONCODEMANAGER_H
 #include <opencv2/opencv.hpp>
 #include <string>
 #include <Windows.h>
@@ -32,3 +34,4 @@ public:
     // 显示验证码并返回验证码字符串
     std::string ShowVerificationCode();
 };
+#endif

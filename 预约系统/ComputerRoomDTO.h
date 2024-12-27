@@ -17,8 +17,5 @@ public:
 
     void setId(const std::string& id);
     void setMax(const std::string& max);
-
-    // 用于打印机房信息
-    friend std::ostream& operator<<(std::ostream& os, const ComputerRoomDTO& cr);
 };
 #endif

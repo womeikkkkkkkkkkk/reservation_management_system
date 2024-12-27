@@ -7,13 +7,12 @@
 #include "ManagerMenu.h"          // 管理员菜单
 #include "StudentMenu.h"          // 学生菜单
 #include "TeacherMenu.h"          // 教师菜单
-#include "MessageManager.h"       // 消息管理器
 #include "VerificationCodeManager.h" // 验证码管理器
 
 //业务逻辑层
 #include "Identity.h"             // 用户身份类（学生、教师、管理员）
 #include "ReservationManager.h"   // 预约管理器
-#include "ComputerRoomManager.h"          // 机房管理器
+#include "ComputerRoomManager.h"  // 机房管理器
 
 //数据层
 #include "DatabaseManager.h"      // 数据库管理器

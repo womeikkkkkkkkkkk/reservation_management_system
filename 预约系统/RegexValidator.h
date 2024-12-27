@@ -1,4 +1,6 @@
 #pragma once
+#ifndef REGEXVALIDATOR_H
+#define REGEXVALIDATOR_H
 #include <string>
 #include <regex>
 
@@ -9,3 +11,4 @@ public:
     static bool validateEmail(const std::string& email);//邮箱验证  邮箱格式规则，支持字母、数字、下划线、点、加号等字符，必须包含 '@' 和 '.'，且 '.' 后至少有两个字母
     static bool validatePhone(const std::string& phone);//手机号验证
 };
+#endif

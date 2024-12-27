@@ -1,4 +1,6 @@
 #pragma once
+#ifndef ENCRYPTIONUTILS_H
+#define ENCRYPTIONUTILS_H
 #include "aes.h"
 #include "filters.h"
 #include "hex.h"
@@ -24,3 +26,4 @@ public:
     static std::string Encrypt(const std::string& plaintext, const std::string& key);// AESº”√‹
     static std::string Decrypt(const std::string& ciphertext, const std::string& key);// AESΩ‚√‹
 };
+#endif

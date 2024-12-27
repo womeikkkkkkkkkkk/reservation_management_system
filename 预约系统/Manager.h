@@ -21,5 +21,4 @@ public:
     // 获取管理员ID
     std::string getManagerID() const;
 };
-
 #endif
