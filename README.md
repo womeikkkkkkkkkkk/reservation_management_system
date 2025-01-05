@@ -4,15 +4,15 @@
 
 开发工具：VS2022 使用C++17和v143工具集
 
-加密库：CryptoPP库-8.7.0
+加密库：CryptoPP-8.7.0
 
 图形库：Opencv库-4.10.0    
-                  OpenGL库  
-                  GLEW库-2.1.0    
-                  GLFW库-3.4  
-                  ImGUI库
+                  OpenGL  
+                  GLEW-2.1.0    
+                  GLFW-3.4  
+                  ImGUI
                   
-DLL防护库：  detours库              
+钩子管理库：  detours           
 
 数据库：MySQL-8.4.0
 
